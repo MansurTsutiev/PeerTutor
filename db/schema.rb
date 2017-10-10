@@ -10,7 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926022858) do
+ActiveRecord::Schema.define(version: 20171008233954) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+  enable_extension "adminpack"
+
+  create_table "courses", force: :cascade do |t|
+    t.string "course_name"
+    t.integer "course_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ratings", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tutor_id"
+    t.decimal "star_count", precision: 3, scale: 1, default: "0.0"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.time "start_time"
+    t.time "end_time"
+    t.time "current_time"
+    t.date "current_date"
+  end
+
+  create_table "sessions", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tutor_id"
+    t.integer "course_id"
+    t.text "question"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tutor_courses", force: :cascade do |t|
+    t.integer "tutor_id"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tutor_profiles", force: :cascade do |t|
+    t.string "major", default: "", null: false
+    t.boolean "is_live", default: false
+    t.decimal "total_tip", precision: 10, scale: 2
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
