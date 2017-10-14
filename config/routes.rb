@@ -42,6 +42,10 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
 
-
+  resources :tutee, only: [:find_tutor] do
+    collection do
+      get 'get_courses'  # /tutee/get_courses
+    end
+  end
 
 end

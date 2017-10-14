@@ -1,0 +1,2 @@
+<%= label :tutoring_session, :course%>
+<%= collection_select :tutoring_session, :course, Course.where(subject_id: subject_id), :id, :name, :include_blank => true%>
