@@ -1,9 +1,9 @@
 class CreateTutoringSessions < ActiveRecord::Migration[5.1]
   def change
     create_table :tutoring_sessions do |t|
-      t.integer :user_id
-      t.integer :tutor_id
-      t.integer :course_id
+      t.references :user, foreign_key: true
+      t.references :tutor, foreign_key: true
+      t.references :course, foreign_key: true
       t.string :question
 
       t.timestamps

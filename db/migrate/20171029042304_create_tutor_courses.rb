@@ -2,8 +2,8 @@ class CreateTutorCourses < ActiveRecord::Migration[5.1]
   #Join Table between Tutor and Course
   def change
     create_table :tutor_courses do |t|
-      t.belongs_to :tutor, index: true
-      t.belongs_to :course, index: true
+      t.references :tutor, foreign_key: true
+      t.references :course, foreign_key: true
 
       t.timestamps
     end

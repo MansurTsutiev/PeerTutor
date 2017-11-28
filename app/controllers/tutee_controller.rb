@@ -35,9 +35,9 @@ class TuteeController < ApplicationController
     TutoringSession.create(tutoring_session_params)
 
     # @tutoring_session = TutoringSession.new
-    # @tutoring_session.course = Course.find(params[:course][:id])
+    # @tutoring_session.course_id = params[:course][:id].to_i
     # @tutoring_session.question = params[:tutoring_session][:question]
-    # @tutoring_session.user = User.find(current_user.id)
+    # @tutoring_session.user_id = current_user.id
     # @tutoring_session.save()
 
 
@@ -99,8 +99,8 @@ class TuteeController < ApplicationController
   #Strong Parameter
   def tutoring_session_params
     params.require(:tutoring_session).permit(:question).merge(
-      user: User.find(current_user.id),
-      course: Course.find(params[:course][:id])
+      user_id: current_user.id,
+      course_id: params[:course][:id].to_i
     )
   end
 
