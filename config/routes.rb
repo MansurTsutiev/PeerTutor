@@ -14,6 +14,12 @@ Rails.application.routes.draw do
 
   get 'tutor/messenger'
 
+  get 'tutor/toggle_is_live'
+
+  get 'tutor/is_live'
+
+  post 'tutor/toggle_is_live'
+
   get 'tutee/index'
 
   get 'tutee/find_tutor'
@@ -39,6 +45,10 @@ Rails.application.routes.draw do
 
   get 'tutor/first_time_tutor'
   post 'tutor/first_time_tutor' => 'tutor#create'
+
+  get 'tutee/get_courses'
+
+  get 'tutee/update'
 
   post 'tutor/update'
 

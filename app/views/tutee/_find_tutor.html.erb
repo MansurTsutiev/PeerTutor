@@ -3,21 +3,25 @@
 
 <%= form_for TutoringSession.new, remote: true, url: {action: "create"} do |f| %>
 
+<h3 id="find_tutor_heading">Fill out the form below to find a tutor: </h3>
+
+<%= form_for :tutoring_session, remote: true do |f|%>
+    <!--Subject field-->
     <div class="form-group ts-field">
-      <div class="subject-area">
+      <div class="subject-area form_field">
         <%= label :tutoring_session, :subject %>
         <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'} %>
       </div>
     </div>
-
+    <!--Course field-->
     <div class="form-group ts-field">
       <div class="course-area">
         <%= render partial: 'select_course', locals: {subject_id: nil} %>
       </div>
     </div>
-
+    <!--Question field-->
     <div class="form-group ts-field">
-      <div class="question-area">
+      <div class="question-area form_field">
         <%= label :tutoring_session, "Question" %>
         <%= f.text_area :question, value: ""%>
       </div>

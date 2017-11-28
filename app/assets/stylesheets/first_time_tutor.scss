@@ -1,0 +1,24 @@
+.register_form {
+	background-position: center;
+	height: 500px;
+	position: relative;
+	background-size: cover;
+	border: 5px solid #190455;
+	border-radius: 10px;
+	width: 70%;
+	margin: 0 auto;
+	margin-top: 50px;
+	box-shadow: 30px 30px 0px #190455; /*#80E3FD*/
+	color: black;
+}
+#register_box{
+	text-align: center;
+	margin: 0 auto;
+}
+.register_btn{
+	color: #190455;
+	padding: 10px 30px;
+	background-color: white;
+	border-radius: 5px;
+	border: 5px solid #190455;
+}

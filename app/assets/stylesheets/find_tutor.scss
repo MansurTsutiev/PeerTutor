@@ -1,0 +1,62 @@
+body.tutee-find_tutor {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	font-size: 2rem;
+	color: #190455;
+	text-align: center;
+}
+#find_tutor_heading {
+	font-weight: bold;
+	padding-bottom: 30px;
+}
+.request_form_container {
+	padding: 30px;
+}
+.find_tutor_btn {
+	color: #190455;
+	padding: 10px 30px;
+	background-color: white;
+	border-radius: 5px;
+	border: 5px solid #190455;
+}	
+.form_field {
+	text-align: center;
+}
+.question_field {
+	width: 100%;
+	height: 200px;
+	padding: 15px;
+	border: 5px solid #190455;
+	border-radius: 5px;
+	outline: none;
+	font-size: 1.7rem;
+	background-color: #F4EDFE;
+}
+.question_field:focus {
+	border: 5px solid #39238F;
+}
+.course-area input  {
+	border: 3px solid #190455;
+	border-radius: 5px;
+}
+.question-area p {
+	font-size: 1.2rem;
+}
+
+/* MEDIA QUERIES FOR WHEN IT IS MOBILE VIEW */
+@media only screen and (max-width: 746px){
+	body.tutee-find_tutor {
+		font-size: 1.4rem;
+	}
+	.request_form_container {
+		padding: 10px;
+	}
+	.subject-area label {
+		display:block;
+		margin: 0 auto;
+	}
+	.course-area label {
+		display:block;
+		margin: 0 auto;
+	}
+}

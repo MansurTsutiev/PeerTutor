@@ -11,10 +11,28 @@
 // about supported directives.
 //= require jquery
 //= require rails-ujs
-//= require turbolinks
 //= require_tree .
 
 //**************************** DASHBOARD ***************************
+//responsible for switching views in the dashboard on click
+$(function(){
+  $("a.load").click(function (e) { 
+    e.preventDefault();
+    $("#tutor_view_frame").load($(this).attr("href"));
+  });
+
+  $("a.tu_load").click(function (e) {
+    e.preventDefault();
+    $("#tutee_view_frame").load($(this).attr("href"));
+  });
+});
+
+//default view page for the dashboards
+$(document).ready(function(){
+  $("#tutor_view_frame").load("/tutor/incoming_requests");
+  $("#tutee_view_frame").load("/tutee/find_tutor");
+});
+
 //responsible for highlighting the selected choice on the dashboard navigation sidebar
 function enable_selected(selected_tab, option_amt) {
 	for(var i = 1; i <= option_amt; i++){

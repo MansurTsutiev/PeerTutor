@@ -1,6 +1,18 @@
 <%= render 'layouts/navigation_bar' %>
 
 <!--============= Tutee Dashbaord ============-->
+<!--Mobile navigation bar-->
+<div id="mobile_nav" class="container visible-xs">
+	<div class="dropdown">
+		<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">C:</button>
+		<div class="dropdown-menu">
+			<a class="dropdown-ltem" href="find_tutor" target="tutee_view_frame">Find Tutor</a>
+			<a class="dropdown-item" href="schedule" target="tutee_view_frame">Schedule</a>
+			<a class="dropdown-item" href="messenger" target="tutee_view_frame">Messenger</a>
+			<a class="dropdown-item" href=tip_management target="tutee_view_frame">Tip Management</a>
+		</div>
+	</div>
+</div>
 
 
 <div class="row dashboard">

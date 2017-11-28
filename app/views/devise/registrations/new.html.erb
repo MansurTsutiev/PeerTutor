@@ -6,11 +6,13 @@
     <div>
         <%= devise_error_messages! %>
     </div>
+
 <div class="form_container">
   <div class="form_header">
     <%= link_to new_session_path(resource_name) do %><!----><div class="other_form_button right_border">Login</div><% end %><!--
     --><div class="selected">Sign up</div>
   </div>
+
   <div class="fill_in_container animated fadeInUp">
     <div class="field">
     <%= f.text_field :first_name, autofocus: true, required:true, value:""%>
@@ -37,8 +39,8 @@
     <%= f.label :password_confirmation, class: 'form_label' %>
     </div>
 
-    <div class="actions">
-    <%= f.submit "Sign up" %>
+    <div class="actions submit_container">
+        <%= f.submit "Sign up", class: 'submit_btn'%>
     </div>
     <% end %>
 

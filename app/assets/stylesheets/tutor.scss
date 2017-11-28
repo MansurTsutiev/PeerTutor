@@ -39,7 +39,7 @@ body.tutor-index {
 	border-bottom: 3px solid #190455;
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
-	font-size: 1.5rem; 
+	font-size: 1.5rem;
 	color: #190455;
 }
 
@@ -61,11 +61,17 @@ body.tutor-index {
 	margin: 10px;
 	background-color: white;
 	box-shadow: 10px 10px 0px #190455; /*#80E3FD*/
+	height: 600px;
 	/*Loading image*/
 	background-image: url(asset-path('Loading.gif'));
 	background-size: 50%;
 	background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
+}
+
+#tutor_view_frame {
+	background-color: white;
+	height: 100%;
 }
 
 .board {
@@ -78,6 +84,11 @@ body.tutor-index {
 	background-color: #F4EDFE;
 }
 
+#live_btn {
+	margin: 0 auto;
+	width: 15%;
+}
+
 @media only screen and (max-width: 730px){
 	.dashboard {
 		margin: 0px;
@@ -88,5 +99,3 @@ body.tutor-index {
 		margin: 0 auto;
 	}
 }
-
-

@@ -1,0 +1,36 @@
+<!--==================TUTOR REQUEST FORM================-->
+
+<div class="request_form_container">
+
+<h3 id="find_tutor_heading">Fill out the form below to find a tutor: </h3>
+
+<%= form_for :tutoring_session, remote: true do |f|%>
+    <!--Subject field-->
+    <div class="form-group ts-field">
+      <div class="subject-area form_field">
+        <%= label :tutoring_session, :subject %>
+        <%= collection_select :subject_id, :subject, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select'} %>
+      </div>
+    </div>
+    <!--Course field-->
+    <div class="form-group ts-field">
+      <div class="course-area form_field">
+        <%= render partial: 'select_course', locals: {subject_id: Subject.first.id}%>
+      </div>
+    </div>
+    <!--Question field-->
+    <div class="form-group ts-field">
+      <div class="question-area form_field">
+        <%= label :tutoring_session, "Question" %>
+        <p>(Give a short overview of the problem you're having issues with.)</p>
+        <%= text_area :question, value="", :class => "question_field" %>
+      </div>
+    </div>
+
+
+    <%= f.submit "Find Tutor", :class => "find_tutor_btn" %>
+
+
+<% end %>
+
+<div>

@@ -114,15 +114,56 @@ body.sessions-new {
 	border-bottom: 4px solid #80E3FD;
 }
 
-.field input:invalid {
-	
-}
-
 .field input:focus {
 	transition: 0.25s;
 	border-bottom: 4px solid #80E3FD;
 }
+/*Submit button*/ 
+.submit_container {
+	text-align: center;
+}
 
-.form_input {
-	background-color: blue;
+.submit_btn{
+	border-radius: 2px black solid;
+}
+
+/* ============== MEDIA QUERIES ================ */
+
+@media only screen and (max-width: 1122px) {
+	.form_container {
+		min-width: 500px;
+	}
+	.form_label {
+		font-size: 1.5rem;
+	}
+	.fill_in_container {
+		padding: 5px;
+		padding-top: 30px;
+	}
+	.field {
+		margin: 7px;
+		margin-bottom: 10px;
+	}
+}
+
+@media only screen and (max-width: 730px) {
+	.form_container {
+		min-width: 300px;
+		box-shadow: 7px 30px 0px #190455; /*#80E3FD*/
+	}
+	.fill_in_container {
+		padding: 30px;
+	}
+	.field {
+		font-size: 1.3rem;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.form_label {
+		font-size: 1.3rem;
+	}
+	.form_header div{
+		font-size: 1.5rem;
+	}
+
 }
