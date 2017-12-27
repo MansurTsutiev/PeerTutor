@@ -43,7 +43,7 @@ class TutorController < ApplicationController
     #save location in a message
     tutee_name = User.find(tutee_id).first_name
     prompt1 = "Hey #{tutee_name}!\n"
-    location = Location.where(user_id: current_user.id).last.name
+    location = current_user.location
     prompt2 = "My location: #{location}"
     conversation = Conversation.create(sender_id: current_user.id, recipient_id: tutee_id)
     message = Message.create(body: prompt1, user_id: current_user.id, conversation_id: conversation.id)
@@ -150,9 +150,9 @@ class TutorController < ApplicationController
       current_user.update_attributes(is_live: false)
 
       unless current_user.location.nil?
-        current_user.location.destroy
+        current_user.update_attributes(location: nil)
       end
-      
+
       respond_to do |format|
         format.js { render 'offline'}
       end
@@ -166,8 +166,8 @@ class TutorController < ApplicationController
   end
 
   def add_location
-    location = current_user.build_location(name: params[:location][:location])
-    if location.save
+    location = params[:location][:location]
+    if current_user.update_attributes(location: location)
       respond_to do |format|
         format.js {render 'incoming_requests'}
       end
