@@ -1,31 +1,28 @@
 <div class="container container-fluid">
 
 <!--============= Tutor Dashbaord ============-->
-<div class="row">
-
-</div>
-<div class="row">
-	<div class="col col-xs-3">
-		<!--Sidebar content-->
-		<%= render 'tutor/side_navigation_bar' %>
-	</div>
-	<div class="col col-xs-9">
-		<!--Body content-->
-		<div id="outer_frame">
+	<div class="row">
+		<div class="col col-xs-3">
+			<!--Sidebar content-->
+			<%= render 'tutor/side_navigation_bar' %>
+		</div>
+		<div class="col col-xs-9">
 			<%= render 'layouts/navigation_bar_leaf' %>
-			<!-- <%= render 'is_live' %> -->
-					<% if @not_live %>
-								<%= render 'offline' %>
-					<% else %>
-								<% if current_user.location %>
-								<%= render 'incoming_requests' %>
-								<% else %>
-								<%= render 'location' %>
-								<% end %>
-					<% end %>
+			<!--Body content-->
+			<div id="outer_frame">
+				<!-- <%= render 'is_live' %> -->
+						<% if @not_live %>
+									<%= render 'offline' %>
+						<% else %>
+									<% if current_user.location %>
+									<%= render 'incoming_requests' %>
+									<% else %>
+									<%= render 'location' %>
+									<% end %>
+						<% end %>
+			</div>
 		</div>
 	</div>
-</div>
 
 
 </div>
