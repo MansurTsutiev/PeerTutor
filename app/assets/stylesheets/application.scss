@@ -330,16 +330,37 @@ h2 {
 	width: 100%;
 }
 
+/*====================SIDE NAVIGATION BAR=======================*/
+
 .side_navigation_bar	{
 	font-size: 1.5rem;
-	padding: 30px 0;
+	padding: 27px 0;
 	margin: auto;
 	max-width: 65%;
+  text-align: -webkit-center;
 }
 
-.side_navigation_bar ul li a{
+.side_navigation_bar ul li a {
 	color: white;
 }
+
+.side_nav_bar_row {
+  padding: 0 !important;
+  width: 100%;
+}
+
+.side_nav_bar_row i {
+  text-align: center;
+}
+
+.side_nav_bar_row .col {
+  height: 100% !important;
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+  padding: 15px 0;
+}
+
 
 /*==================== DASHBOARD: END =======================*/
 

@@ -15,31 +15,36 @@
 
   <div class="side_navigation_bar">
     <ul>
-      <li tabindex="0"><span>
-        <i class="fa fa-search" aria-hidden="true" style="color:white"></i>
-        <%=link_to "Incoming Request", tutor_incoming_requests_path, remote: true, class: "btn", id: "incoming_requests_link"  %>
-        <mark id="incoming_requests_notify" class=""></mark>
-      </span>
+      <li tabindex="0" class="row side_nav_bar_row">
+        <span>
+          <i class="fa fa-search col col-xs-2" aria-hidden="true" style="color:white;"></i>
+          <%=link_to "Incoming Request", tutor_incoming_requests_path, remote: true, class: "btn col col-xs-7", id: "incoming_requests_link"  %>
+          <mark id="incoming_requests_notify" class="col col-xs-2"></mark>
+        </span>
       </li>
-      <li tabindex="0"><span>
-        <i class="fa fa-th-list" aria-hidden="true" style="color:white"></i>
-        <%= link_to "Currently Tutoring", tutor_currently_tutoring_path, remote: true, class: "btn", id: "currently_tutoring_link" %>
-        <mark id="currently_tutoring_notify" class=""></mark>
-      </span>
+      <li tabindex="0" class="row side_nav_bar_row">
+        <span>
+          <i class="fa fa-th-list col col-xs-2" aria-hidden="true" style="color:white"></i>
+          <%= link_to "Currently Tutoring", tutor_currently_tutoring_path, remote: true, class: "btn col col-xs-7", id: "currently_tutoring_link" %>
+          <mark id="currently_tutoring_notify" class="col col-xs-2"></mark>
+        </span>
       </li>
-      <li tabindex="0"><span>
-        <i class="fa fa-comments" aria-hidden="true" style="color:white"></i>
-        <%= link_to "Messenger", chat_index_path, remote: true, class: "btn" %>
-        <mark class=""></mark>
-      </span>
+      <li tabindex="0" class="row side_nav_bar_row">
+        <span>
+          <i class="fa fa-comments col col-xs-2" aria-hidden="true" style="color:white"></i>
+          <%= link_to "Messenger", chat_index_path, remote: true, class: "btn col col-xs-7" %>
+          <mark class="col col-xs-2"></mark>
+        </span>
       </li>
-      <li tabindex="0"><span>
-        <i class="fa fa-money" aria-hidden="true" style="color:white"></i>
-        <%= link_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, class: "btn"%></span>
+      <li tabindex="0" class="row side_nav_bar_row"><span>
+        <i class="fa fa-money col col-xs-2" aria-hidden="true" style="color:white"></i>
+        <%= link_to "Piggy Bank",tutor_piggy_bank_path,  remote: true, class: "btn col col-xs-7"%></span>
+        <mark class="col col-xs-2"></mark>
       </li>
-      <li tabindex="0" class=""><span>
-        <i class="fa fa-chevron-circle-up" aria-hidden="true"  style="color:white"></i>
-        <%= link_to "Tutor Profile", tutor_tutor_profile_path, remote: true, class: "btn" %></span>
+      <li tabindex="0" class="row side_nav_bar_row"><span>
+        <i class="fa fa-chevron-circle-up col col-xs-2" aria-hidden="true"  style="color:white"></i>
+        <%= link_to "Tutor Profile", tutor_tutor_profile_path, remote: true, class: "btn col col-xs-7" %></span>
+        <mark class="col col-xs-2"></mark>
       </li>
     </ul>
   </div>
