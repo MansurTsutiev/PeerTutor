@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213200003) do
+ActiveRecord::Schema.define(version: 20171106000631) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,14 +31,6 @@ ActiveRecord::Schema.define(version: 20171213200003) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_courses_on_subject_id"
-  end
-
-  create_table "locations", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_locations_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -95,6 +87,7 @@ ActiveRecord::Schema.define(version: 20171213200003) do
     t.boolean "is_tutor", default: false
     t.boolean "is_live", default: false
     t.decimal "total_tip", precision: 10, scale: 2
+    t.string "location"
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -120,7 +113,6 @@ ActiveRecord::Schema.define(version: 20171213200003) do
   add_foreign_key "conversations", "users", column: "recipient_id"
   add_foreign_key "conversations", "users", column: "sender_id"
   add_foreign_key "courses", "subjects"
-  add_foreign_key "locations", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "tutor_courses", "courses"

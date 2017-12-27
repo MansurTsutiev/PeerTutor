@@ -11,6 +11,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       t.boolean :is_tutor
       t.boolean :is_live, default: false
       t.decimal :total_tip, scale: 2, precision: 10
+      t.string :location
 
       t.string :encrypted_password, null: false, default: ""
 
