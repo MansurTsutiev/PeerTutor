@@ -104,14 +104,6 @@ class TutorController < ApplicationController
     end
   end
 
-  def is_live
-    @tutor = Tutor.where(user_id: current_user.id).take
-    if @tutor.is_live
-      redirect_to tutor_incoming_requests_path
-    end
-  end
-
-
   def first_time_tutor
     @subject = Subject.new
   end
