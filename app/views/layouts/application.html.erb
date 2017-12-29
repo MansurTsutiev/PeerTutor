@@ -5,8 +5,7 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'https://js.stripe.com/v3/' ,'data-turbolinks-track': 'reload' %>
-    <%= tag :meta , name: "stripe_public_key", content: Rails.application.secrets.stripe_public_key %>
+    <%= javascript_include_tag 'application' ,'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">  <!-- bootstrap css-->
     <!--Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
