@@ -38,6 +38,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'utf8-cleaner'
 gem 'stripe', '~> 3.4', '>= 3.4.1'
+gem "paperclip", "~> 5.0.0"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
