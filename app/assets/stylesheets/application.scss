@@ -19,6 +19,12 @@ body, html, .container-fluid, .sidebar, .body {
     height: 100%;
     max-height: 100%;
 }
+body {
+  margin: 0;
+  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #fff;
+  /*padding-left: 240px;*/
+}
 
 * {
 	box-sizing: border-box;
@@ -81,48 +87,7 @@ nav .navbar {
 		font-size: 1.7rem !important;
 	}
 }
-/*==================== CHAT APP: =======================*/
-ul {
-  padding-left: 0px;
-  list-style: none;
-	text-decoration: none;
-}
-
-.messages-list {
-  max-height: 200px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-
-.message-sent {
-  position: relative;
-  background-color: #D9EDF7;
-  border-color: #BCE8F1;
-  margin: 5px 20px;
-  padding: 10px;
-  float: right !important;
-}
-
-
-.message-received {
-  background-color: #F1F0F0;
-  border-color: #EEEEEE;
-  margin: 5px 20px;
-  padding: 10px;
-  float: left;
-}
-/*==================== CHAT APP: END  =======================*/
-
 /*==================== DASHBOARD: =======================*/
-
-body {
-  background-color: coral;
-  margin: 0;
-  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #fff;
-  /*padding-left: 240px;*/
-}
 main {
   position: relative;
   height: 100%;
@@ -365,10 +330,10 @@ h2 {
   padding-top: 0 !important;
   padding-left: 0 !important;
 }
-
-
 /*==================== DASHBOARD: END =======================*/
 
+
+/*==================== FOOTER:  =======================*/
 footer {
   position: absolute;
   width: 100%;
@@ -398,9 +363,9 @@ footer {
 	    width: 100% !important;
 	}
 }
+/*==================== FOOTER: end =======================*/
 
-
-/*==================== NOTIFICATION =======================*/
+/*==================== NOTIFICATION: =======================*/
 
 mark {
   background-color: transparent !important;
@@ -423,3 +388,4 @@ mark {
   color: #FFF;
   font-weight: 100;
 }
+/*==================== NOTIFICATION: end =======================*/
