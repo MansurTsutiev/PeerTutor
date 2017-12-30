@@ -2,11 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// .font_styling {
-// 	font-family: 'Nunito', sans-serif;
-// 	font-weight: bold;
-// 	color: #190455;
-// }
+.font_styling {
+	font-family: 'Nunito', sans-serif;
+	font-weight: bold;
+	color: #190455;
+}
 body.tutor-index {
 	background-image: url(asset-path('background/diagmonds.jpg'));
 	background-size: 100%;

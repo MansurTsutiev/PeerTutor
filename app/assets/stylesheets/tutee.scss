@@ -6,21 +6,21 @@ body.tutee-index {
 	background-size: 100%;
 	background-image: url(asset-path('background/diagmonds.jpg'));
 }
-// .ts-field label {
-//   width: 15%;
-// }
-// .ts-field select {
-//   width: 50%;
-//   height: 30px;
-// }
-// .nav_link {
-// 	width: 100%;
-// 	padding: 25px;
-// 	outline: none;
-// }
-// .nav_link:hover {
-// 	background-color: #F4EDFE;
-// }
+.ts-field label {
+  width: 15%;
+}
+.ts-field select {
+  width: 50%;
+  height: 30px;
+}
+.nav_link {
+	width: 100%;
+	padding: 25px;
+	outline: none;
+}
+.nav_link:hover {
+	background-color: #F4EDFE;
+}
 /*==================== SIDE NAVIGATION BAR: =======================*/
 .menu.tutee_menu ul {
   list-style: none;
@@ -197,7 +197,7 @@ body.tutee-index {
 }
 
 #waiting_for_tutor img {
-	width: 50%;
+	width: 23rem;
 	height: auto;
 	padding: 50px;
 }
@@ -205,6 +205,7 @@ body.tutee-index {
 #waiting_for_tutor h2 {
 	color: #777;
 	font-family: 'Work Sans', sans-serif;
+	font-size: 2rem;
 }
 
 .choose_tutor_submit_btn:hover {
@@ -216,6 +217,15 @@ body.tutee-index {
 .choose_tutor_submit_btn:active {
 	text-decoration: none;
 }
+
+@media all and (max-width: 768px) {
+	#waiting_for_tutor img {
+		width: 80%;
+		height: auto;
+		padding: 50px;
+	}
+}
+
 
 // @media only screen and (max-width: 730px){
 // 	.list_of_tutors {
