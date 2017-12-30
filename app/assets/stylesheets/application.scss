@@ -48,6 +48,9 @@ a:hover {
   padding: 0;
   height: inherit !important;
 }
+nav:focus{
+  outline: none;
+}
 
 /*==================== NAVIGATION BAR =======================*/
 nav.nav_top {
