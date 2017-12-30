@@ -152,7 +152,7 @@ class TuteeController < ApplicationController
   end
 
   def available_tutors(course_id)
-    @tutors = User.where(is_tutor: true, is_live: true).where.not(id: current_user.id).all  # @tutors.ids returns the array of live_tutor's ids
+    @tutors = User.where(is_tutor: true, is_live: true).where.not(id: current_user.id, location: nil).all  # @tutors.ids returns the array of live_tutor's ids
 
     course_tutor_ids = Array.new
 
