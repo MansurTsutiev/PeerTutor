@@ -1,17 +1,22 @@
-<nav class="navbar navbar-default" id="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand style_nav_txt" href="/">Peer Tutoring</a>
-				</div>
-				<div class="collapse navbar-collapse">
-					<ul class="nav navbar-nav navbar-right">
-						<% if user_signed_in? %>
-							<li><a href="#">Signed In As <%= current_user.first_name %></a></li>
-							<li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
-						<% else %>
-							<li><%= link_to "Log in", home_authentication_path %></li>
-						<% end %>
-					</ul>
-				</div>
-			</div>
-		</nav>
+<nav class="navbar navbar-expand-md">
+		<!-- Brand -->
+		<a class="navbar-brand pl-4" id="style_nav_txt" href="/">Peer Tutoring</a>
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+
+		  <!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav ml-auto pr-3">
+				<% if user_signed_in? %>
+					<li class="nav-item p-2"><a href="#">Signed In As <%= current_user.first_name %></a></li>
+					<li class="nav-item p-2"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+				<% else %>
+					<li class="nav-item p-2"><%= link_to "Log in", home_authentication_path %></li>
+				<% end %>
+			</ul>
+		</div>
+
+</nav>

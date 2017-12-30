@@ -18,51 +18,59 @@
 body, html, .container-fluid, .sidebar, .body {
     height: 100%;
     max-height: 100%;
+    font-size: 12px;   /* change default size due to switching v3 to v4 */
 }
 body {
-  margin: 0;
   font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #fff;
-  /*padding-left: 240px;*/
 }
-
 * {
-	box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none !important;
+}
+
 /*==================== NAVIGATION BAR =======================*/
-nav .navbar {
-		margin-bottom: 0;
+nav {
+  border-bottom: 1.3px solid #DBDBDB;
+  padding: 0 !important;
+}
+nav ul li a {
+  color: #777;
+  font-size: 1.25rem;
+}
+nav ul li a:hover {
+  color: inherit;
+}
+#style_nav_txt {
+	font-weight: bold;
+	font-family: 'Pangolin', sans-serif;
+	font-size: 2.4rem;
+	color: #9075BD;
 }
 
-.box {
-		background-position: center;
-		height: 500px;
-		position: relative;
-		background-size: cover;
-		padding: 170px;
-		color: white;
-}
+// .box {
+// 		background-position: center;
+// 		height: 500px;
+// 		position: relative;
+// 		background-size: cover;
+// 		padding: 170px;
+// 		color: white;
+// }
 
-#button-box button {
-		width: 200px;
-		height: 250px;
-}
-
-#button-box {
-		margin-top: 70px;
-}
-
-#navigation {
-	margin: 0;
-	background-color: transparent;
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	border-bottom: 1.3px solid #DBDBDB;
-	font-size: 1.1em;
-	padding: 0 7px;
-	padding-right: 20px;
-}
+// #button-box button {
+// 		width: 200px;
+// 		height: 250px;
+// }
+//
+// #button-box {
+// 		margin-top: 70px;
+// }
 
 #navigation tutor-index {
 	display: none;
@@ -73,13 +81,6 @@ nav .navbar {
 	padding: 7px 10px;
 	margin: 8px;
 	color: #ABACD3;
-}
-
-.style_nav_txt {
-	font-weight: bold;
-	font-family: 'Pangolin', sans-serif;
-	font-size: 2.5rem !important;
-	color: #9075BD !important;
 }
 
 @media only screen and (max-width: 730px){

@@ -1,13 +1,6 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-html, body {
-    height:100%;
-}
-
-* {
-	box-sizing: border-box;
-}
 
 body #main_page_body {
 	background-image: url(asset-path('bg.png'));
