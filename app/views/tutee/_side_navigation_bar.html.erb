@@ -4,7 +4,7 @@
 
     <header class="avatar">
       <%= link_to tutee_index_path do %>
-      <%= image_tag "avatar.png", :id => "avatar"%>
+      <%= image_tag current_user.avatar, :id => "avatar", class: "img-circle"%>
       <h2 id="dash_board_user_name"><%= current_user.first_name %></h2>
       <% end %>
     </header>
