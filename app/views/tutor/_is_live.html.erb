@@ -1,13 +1,13 @@
 <div class="is_live_box">
 <% if current_user.is_live %>
-  <%     img_src = 'https://vignette.wikia.nocookie.net/battlefordreamisland/images/6/6f/Lightbulb.png/revision/latest/scale-to-width-down/278?cb=20161222154836' %>
-  <%     status = 'on' %>
+  <% img_src = 'https://vignette.wikia.nocookie.net/battlefordreamisland/images/6/6f/Lightbulb.png/revision/latest/scale-to-width-down/278?cb=20161222154836' %>
+  <% status = 'on' %>
 <% else  %>
     <% img_src = 'http://images.clipartpanda.com/light-bulb-png-MiLxq9oyT.png'%>
     <% status = 'off' %>
 <% end %>
 
 <%= link_to tutor_toggle_is_live_path, remote: true do %>
-  <%=image_tag(img_src, size: "40x70", alt: "live button", :id => "live_btn", data: {status: status})%>
+  <%= image_tag(img_src, size: "40x70", alt: "live button", :id => "live_btn", data: {status: status})%>
 <% end %>
 </div>

@@ -1,52 +1,60 @@
-<nav class="menu" tabindex="0">
-  <div class="smartphone-menu-trigger"></div>
+<nav class="menu tutee_menu" tabindex="0">
+  <!-- <div class="smartphone-menu-trigger"></div> -->
+  <header class="avatar pt-5">
+    <%= link_to tutee_index_path do %>
+    <%= image_tag "avatar.png", :id => "avatar"%>
+    <h2 class="py-4" id="dash_board_user_name"><%= current_user.first_name %></h2>
+    <% end %>
+  </header>
 
+  <div class="row justify-content-center pt-4">
 
-    <header class="avatar">
-      <%= link_to tutee_index_path do %>
-      <%= image_tag "avatar.png", :id => "avatar"%>
-      <h2 id="dash_board_user_name"><%= current_user.first_name %></h2>
-      <% end %>
-    </header>
-
-  <div class="side_navigation_bar">
+    <div class="col-xl-6 col-lg-7 col-md-8 col-sm-8 col-8">
     <ul>
-      <li tabindex="0" class="row side_nav_bar_row">
+
+      <li tabindex="0" class="side_nav_bar_row">
         <span>
-          <i class="fa fa-search col col-xs-2" aria-hidden="true" style="color:white"></i>
-          <%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn new_btn col col-xs-7", id: "" %>
-          <div class="col col-xs-2"><mark id="" class=""></mark></div>
+          <div class="d-inline"><i class="fa fa-search" aria-hidden="true" style="color:white"></i></div>
+          <div class="d-inline"><%=link_to "Find Tutor", tutee_find_tutor_path, remote: true, class: "btn new_btn", id: "" %></div>
+          <div class="d-inline"><mark id="" class=""></mark></div>
         </span>
       </li>
-      <li tabindex="0" class="row side_nav_bar_row">
+
+
+      <li tabindex="0" class="side_nav_bar_row">
         <span>
-          <i class="fa fa-th-list col col-xs-2" aria-hidden="true" style="color:white"></i>
-          <%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn new_btn col col-xs-7", id: "" %>
-          <div class="col col-xs-2"><mark id="" class=""></mark></div>
+          <div class="d-inline"><i class="fa fa-th-list" aria-hidden="true" style="color:white"></i></div>
+          <div class="d-inline"><%= link_to "Schedule", tutee_schedule_path, remote: true, class: "btn new_btn", id: "" %></div>
+          <div class="d-inline"><mark id="" class=""></mark></div>
         </span>
       </li>
-      <li tabindex="0" class="row side_nav_bar_row">
+
+      <li tabindex="0" class="side_nav_bar_row">
         <span>
-          <i class="fa fa-comments col col-xs-2" aria-hidden="true" style="color:white"></i>
-          <%= link_to "Messenger", chat_index_path, remote: true, class: "btn new_btn col col-xs-7", id: "messenger_link" %>
-          <div class="col col-xs-2"><mark id="messenger_notify" class=""></mark></div>
+          <div class="d-inline"><i class="fa fa-comments" aria-hidden="true" style="color:white"></i></div>
+          <div class="d-inline"><%= link_to "Messenger", chat_index_path, remote: true, class: "btn new_btn", id: "messenger_link" %></div>
+          <div class="d-inline"><mark id="messenger_notify" class=""></mark></div>
         </span>
       </li>
-      <li tabindex="0" class="row side_nav_bar_row">
+
+      <li tabindex="0" class="side_nav_bar_row">
         <span>
-          <i class="fa fa-money col col-xs-2" aria-hidden="true" style="color:white"></i>
-          <%= link_to "Tips Box", tutee_tips_management_path, remote: true, class: "btn new_btn col col-xs-7"%>
-          <div class="col col-xs-2"><mark id="" class=""></mark></div>
+          <div class="d-inline"><i class="fa fa-money" aria-hidden="true" style="color:white"></i></div>
+          <div class="d-inline"><%= link_to "Tips Box", tutee_tips_management_path, remote: true, class: "btn new_btn"%></div>
+          <div class="d-inline"><mark id="" class=""></mark></div>
         </span>
       </li>
-      <li tabindex="0" class="row side_nav_bar_row">
+
+      <li tabindex="0" class="side_nav_bar_row">
         <span>
-          <i class="fa fa-chevron-circle-up col col-xs-2" aria-hidden="true"  style="color:white"></i>
-          <%= link_to "Tutee Profile", tutee_profile_path, remote: true, class: "btn new_btn col col-xs-7" %>
-          <div class="col col-xs-2"><mark id="" class=""></mark></div>
+          <div class="d-inline"><i class="fa fa-chevron-circle-up" aria-hidden="true"  style="color:white"></i></div>
+          <div class="d-inline"><%= link_to "Tutee Profile", tutee_profile_path, remote: true, class: "btn new_btn" %></div>
+          <div class="d-inline"><mark id="" class=""></mark></div>
         </span>
       </li>
+
     </ul>
+  </div>
   </div>
 
   <footer>© Copyright 2017 PeerTutor</footer>

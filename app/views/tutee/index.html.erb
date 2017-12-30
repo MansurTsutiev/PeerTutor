@@ -1,19 +1,17 @@
-<div class="container-fluid">
+<div class="row row_index">
 
-  <div class="row">
-
-    <div class="col-xs-3">
+    <div class="col col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
       <!--Sidebar content-->
 			<%= render 'tutee/side_navigation_bar' %>
     </div>
 
-    <div class="col-xs-9">
+    <div class="col col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9">
       <div class="row">
         <%= render 'layouts/navigation_bar_leaf' %>
       </div>
       <!--Body content-->
-      <div class="row">
-  			<div class="col-xs-8 col-xs-offset-2">
+      <div class="row justify-content-center">
+  			<div class="col-md-8 col-sm-8 col-xs-8 col-8 pt-5">
   				<!-- This frame is being replaced with another page from the dashboard -->
           <% if @command == "find_tutor" %>
             <%= render partial: "find_tutor", object: @subject %>
@@ -28,10 +26,7 @@
       </div>
     </div>
 
-  </div>
-
 </div>
-
 
 
 <%= javascript_include_tag('tutee.js') %>

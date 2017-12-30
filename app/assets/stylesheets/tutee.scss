@@ -3,68 +3,123 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body.tutee-index {
-	/*background-image: url(asset-path('dashboard-bg.png'));*/
 	background-size: 100%;
 	background-image: url(asset-path('background/diagmonds.jpg'));
+}
+// .ts-field label {
+//   width: 15%;
+// }
+// .ts-field select {
+//   width: 50%;
+//   height: 30px;
+// }
+// .nav_link {
+// 	width: 100%;
+// 	padding: 25px;
+// 	outline: none;
+// }
+// .nav_link:hover {
+// 	background-color: #F4EDFE;
+// }
+/*==================== SIDE NAVIGATION BAR: =======================*/
+.menu.tutee_menu ul {
+  list-style: none;
+  padding: 0.5em 0;
+  margin: 0;
+}
+.menu.tutee_menu ul li {
+  padding: 10px 0;
+  outline: none;
+}
+.menu.tutee_menu ul li .btn:hover {
+  border-bottom: 1.5px solid white;
+}
+.menu.tutee_menu ul li .btn:focus {
+  border-bottom: 1.5px solid white;
+}
+.menu.tutee_menu .btn {
+  font-size: 1.3rem;
+  color: white;
+}
+.tutee_menu .side_nav_bar_row {
+  padding: 30px 0;
+  width: 100%;
+}
+.tutee_menu .side_nav_bar_row i {
+  text-align: center;
+  font-size: 1rem;
+}
+/*---------- Page Responsive ------------*/
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  .menu.tutee_menu .btn {
+    font-size: 1.15rem;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .menu.tutee_menu .avatar {
+    padding: 0.5em;
+    position: relative;
+  }
+  .menu.tutee_menu .avatar h2 {
+    font-size: 1.5rem;
+  }
+  .menu.tutee_menu .btn {
+    font-size: 0.9rem;
+  }
+  .tutee_menu .side_nav_bar_row i {
+    font-size: 0.6rem;
+  }
 
 }
-.ts-field label {
-  width: 15%;
+
+@media all and (max-width: 768px) {
+  .menu.tutee_menu .avatar h2 {
+    font-size: 1.5rem;
+  }
+  .menu.tutee_menu .btn {
+    font-size: 0.8rem;
+  }
 }
-.ts-field select {
-  width: 50%;
-  height: 30px;
-}
-.nav_link {
-	width: 100%;
-	padding: 25px;
-	outline: none;
-}
-.nav_link:hover {
-	background-color: #F4EDFE;
-}
-#find_tutor_heading {
-	color: #190455;
+/*---------- Page Responsive: END ------------*/
+
+/*==================== SIDE NAVIGATION BAR: END =======================*/
+
+/*==================== FIND TUTOR: =======================*/
+#find_tutor_box{
 	font-family: 'Work Sans', sans-serif;
-	text-transform: uppercase;
-	font-size: 3rem;
-	text-align: center;
-	font-weight: bold;
 }
-.question_box {
+#find_tutor_box .ft-field {
+	width: 100%;
+  padding: 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+	border: 1.3px solid #DBDBDB;
+	border-radius: 10px;
+}
+#find_tutor_box label {
+	font-size: 1.3em;
+}
+#find_tutor_box select {
+	height: 2.5rem;
+}
+#find_tutor_box .question_box {
 	resize: none;
 	width: 100%;
-	height: 200px;
+	height: 17rem;
 	border: 1.5px solid lightgray;
 	border-radius: 5px;
 	outline: none;
 	padding: 5px;
-	font-family: 'Work Sans', sans-serif;
 	color: #190455;
 	background-color: #f8f8f8;
 }
-.find_tutor_form_label {
-	font-family: 'Work Sans', sans-serif;
-	font-weight: bold;
-	font-size: 1.6rem !important;
-	color: #190455;
+#find_tutor_box .submit {
+	background-color: #76BFB5;
 }
-/*.question-area p {
-	font-family: 'Nunito', sans-serif;
-	font-weight: bold;
-}*/
-#find_tutor_submit_btn {
-	outline: none;
-	padding: 3px 10px;
-	font-family: 'Nunito', sans-serif;
-	font-weight: bold;
-	color: #190455;
-	border: solid 3px #190455;
-	background-color: #F4EDFE;
-}
-#find_tutor_submit_btn:hover {
-	border: solid 3px #80e3fd;
-}
+/*==================== FIND TUTOR: END =======================*/
+
+/*==================== LIST OF TUTOR: =======================*/
 .list_of_tutors {
 	padding: 0px 100px;
 	height: 70px;
@@ -106,20 +161,7 @@ body.tutee-index {
 	color: #190455;
 }
 
-#frame {
-	/*float: right;
-	margin-right: 100px;*/
-}
-
-/*FIND TUTOR PAGE:*/
 .request_form_container {
-
-}
-#dash_board_user_name {
-	color: white;
-	font-family: 'Work Sans', sans-serif;
-}
-#new_tutoring_session {
 
 }
 .submit {
@@ -135,30 +177,13 @@ body.tutee-index {
 	margin-top: 70px;
 }
 
-#find_tutor_box .ft-field {
-	width: 100%;
-    padding: 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-	border: 1.3px solid #DBDBDB;
-	border-radius: 10px;
-}
-
-#find_tutor_box label {
-	font-size: 1.3em;
-}
-
-#find_tutor_box .submit {
-	background-color: #76BFB5;
-}
-
 #profile_box .edit {
 	background-color: #76BFB5;
 	width: 100%;
 	border: none;
 }
 
-// _pick_tutor
+/*==================== PICK TUTOR: =======================*/
 .cancel {
 	width:100%;
 	max-width: 500px;
@@ -192,8 +217,8 @@ body.tutee-index {
 	text-decoration: none;
 }
 
-@media only screen and (max-width: 730px){
-	.list_of_tutors {
-		padding: 0px 5px;
-	}
-}
+// @media only screen and (max-width: 730px){
+// 	.list_of_tutors {
+// 		padding: 0px 5px;
+// 	}
+// }
