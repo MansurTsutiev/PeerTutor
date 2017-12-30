@@ -2,29 +2,30 @@
 
   <div class="row">
 
-    <div class="col-md-3 col-sm-0 col-xs-0">
+    <div class="col-xs-3">
       <!--Sidebar content-->
 			<%= render 'tutee/side_navigation_bar' %>
     </div>
-    <div class="col-md-9 col-sm-12 col-xs-12">
-      <%= render 'layouts/navigation_bar_leaf' %>
-      <!--Body content-->
-			<main style="overflow: auto;">
-					<div id="outer_frame">
-						<!-- This frame is being replaced with another page from the dashboard -->
-            <% if @command == "find_tutor" %>
-              <%= render partial: "find_tutor", object: @subject %>
-            <% elsif @command == "list_of_tutors"%>
-              <%= render partial: "tutee/list_of_tutors", object: @available_tutors %>
-            <% elsif @command == "being_tutored" %>
-              <%= render partial: "tutee/being_tutored", object: @tutor %>
-            <% else %>
-              <%= render partial: "tutee/pick_tutor", object: @tutor %>
-            <% end %>
 
-					</div>
-				<!-- <%= image_tag "cloud.png", class: "cloud" %> -->
-			</main>
+    <div class="col-xs-9">
+      <div class="row">
+        <%= render 'layouts/navigation_bar_leaf' %>
+      </div>
+      <!--Body content-->
+      <div class="row">
+  			<div class="col-xs-8 col-xs-offset-2">
+  				<!-- This frame is being replaced with another page from the dashboard -->
+          <% if @command == "find_tutor" %>
+            <%= render partial: "find_tutor", object: @subject %>
+          <% elsif @command == "list_of_tutors"%>
+            <%= render partial: "tutee/list_of_tutors", object: @available_tutors %>
+          <% elsif @command == "being_tutored" %>
+            <%= render partial: "tutee/being_tutored", object: @tutor %>
+          <% else %>
+            <%= render partial: "tutee/pick_tutor", object: @tutor %>
+          <% end %>
+  			</div>
+      </div>
     </div>
 
   </div>

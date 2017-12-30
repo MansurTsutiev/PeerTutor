@@ -29,7 +29,7 @@ body {
 * {
 	box-sizing: border-box;
 }
-/*====================NAVIGATION BAR=======================*/
+/*==================== NAVIGATION BAR =======================*/
 nav .navbar {
 		margin-bottom: 0;
 }
@@ -88,28 +88,28 @@ nav .navbar {
 	}
 }
 /*==================== DASHBOARD: =======================*/
-main {
-  position: relative;
-  height: 100%;
-}
-main .helper {
-  background: rgba(0, 0, 0, 0.2);
-  color: #ffea92;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  padding: 1.2em 2em;
-  text-align: center;
-  border-radius: 20px;
-  font-size: 2em;
-  font-weight: bold;
-}
-main .helper span {
-  color: rgba(0, 0, 0, 0.2);
-  font-size: 0.4em;
-  display: block;
-}
+// main {
+//   position: relative;
+//   height: 100%;
+// }
+// main .helper {
+//   background: rgba(0, 0, 0, 0.2);
+//   color: #ffea92;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate3d(-50%, -50%, 0);
+//   padding: 1.2em 2em;
+//   text-align: center;
+//   border-radius: 20px;
+//   font-size: 2em;
+//   font-weight: bold;
+// }
+// main .helper span {
+//   color: rgba(0, 0, 0, 0.2);
+//   font-size: 0.4em;
+//   display: block;
+// }
 .menu {
   background: linear-gradient(#4E4A85,#4E4A85,#80e3fd, white);
   height: 100%;
@@ -295,7 +295,7 @@ h2 {
 	width: 100%;
 }
 
-/*====================SIDE NAVIGATION BAR=======================*/
+/*==================== SIDE NAVIGATION BAR =======================*/
 
 .side_navigation_bar	{
 	font-size: 1.5rem;
