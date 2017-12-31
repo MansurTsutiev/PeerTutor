@@ -1,10 +1,17 @@
+<% if current_user.avatar.present? %>
+  <% image = current_user.avatar %>
+<% else %>
+  <% image = "avatar.png" %>
+<% end %>
+
+
 <nav class="menu" tabindex="0">
   <div class="smartphone-menu-trigger"></div>
 
 
     <header class="avatar">
       <%= link_to tutee_index_path do %>
-      <%= image_tag current_user.avatar, :id => "avatar", class: "img-circle"%>
+      <%= image_tag image, :id => "avatar", class: "img-circle"%>
       <h2 id="dash_board_user_name"><%= current_user.first_name %></h2>
       <% end %>
     </header>
