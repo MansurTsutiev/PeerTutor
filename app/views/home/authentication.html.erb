@@ -2,32 +2,37 @@
 
 <!--=============CHOOSE ROLE PAGE=================-->
 
-<div class="container text-center animated bounceInUp" id="role_container">
+<div class="container animated bounceInUp" id="role_container">
+	<div class="row">
 	<!--Need to vertify if already sign up as a tutor-->
 
-	<div class="visible-xs visible-sm">
+	<!-- <div class="visible-xs visible-sm">
 		<h1 class="style_text font_style ">Which role are you today?</h1>
 		<p class="style_text font_style">Choose a role.</p>
-	</div>
+	</div> -->
 
-	<%= link_to tutee_index_path do %>
-    	<div id="tutee_role" class="col-lg-4 col-md-4 col-sm-6 col-xs-6 role_img">
+    <div id="tutee_role" class="col-md-4 col-sm-4 col-xs-4 col-4 role_img">
+				<%= link_to tutee_index_path do %>
 			<%=image_tag("tuteerole.png", alt: "tutee image", :id => "tutee_img")%>
 			<p class="style_text font_style">Tutee</p>
+			<% end %>
 		</div>
-	<% end %>
 
-		<div id="role_text" class="col-lg-4 col-md-4 col-sm-4 hidden-xs hidden-sm">
+
+		<div id="role_text" class="col-md-4 col-sm-4 col-xs-4 col-4 ">
 			<h1 class="style_text font_style ">Which role are you today?</h1>
 			<p class="style_text font_style">Choose a role.</p>
 		</div>
 
-	<%= link_to tutor_index_path do %>
-    	<div id="tutor_role" class="col-lg-4 col-md-4 col-sm-6 col-xs-6 role_img">
+
+    	<div id="tutor_role" class="col-md-4 col-sm-4 col-xs-4 col-4 role_img">
+				<%= link_to tutor_index_path do %>
 			<%=image_tag("tutorrole.png", alt: "tutor image", :id => "tutor_img")%>
 			<p class="style_text font_style">Tutor</p>
+				<% end %>
 		</div>
-	<% end %>
+
+</div>
 
 </div>
 

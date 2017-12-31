@@ -5,10 +5,12 @@
 		</br>
 		<div class="course_selection_container font_styling">
 		  <%= collection_check_boxes(:course, :id, Course.where(subject_id: subject_id), :id, :name) do |b| %>
+			<div class="row">
 		  	<span class="course_selection col-lg-12 col-xs-12">
 			  	<span class="course_check_box"> <%= b.check_box %> </span>
 			  	<span class="course_label"> <%= b.label %> </span>
 		  	</span>
+			</div>
 		  <% end %>
 		</div>
 	<% end %>

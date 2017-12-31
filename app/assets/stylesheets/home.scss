@@ -1,49 +1,44 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-html, body {
-    height:100%;
-}
 
-* {
-	box-sizing: border-box;
+/*========= HOME PAGE ==========*/
+body .home_main {
+	min-width: 1280px;
+  max-width: 2560px;
 }
-
 body #main_page_body {
 	background-image: url(asset-path('bg.png'));
 	background-size: 100%;
 	background-repeat: no-repeat;
 	height: 100%;
+  text-align: center;
 }
 .style_text {
 	color: #190455;
 	text-decoration: none;
+	font-size: 2rem;
 }
-
 .center {
 	bottom: 0;
 	margin: auto;
 	width: 100%;
 }
-
 #main-header {
 	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 3.5rem;
+	font-size: 3rem;
 	letter-spacing: 0.7px;
 	padding: 30px 0;
 }
-
 #doodle_img {
 	width: 100%;
 }
-
 #steps {
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
 	font-size: 2rem;
 	padding-bottom: 5px;
 }
-
 #start_img {
 	margin: 0 auto;
     position: relative;
@@ -52,7 +47,6 @@ body #main_page_body {
 	background-size: contain;
 	background-repeat: no-repeat;
 }
-
 #start_img:hover {
 	background-image: url(asset-path('startButtonHover.png'));
 }
@@ -63,10 +57,12 @@ body #role_container {
 	background-size: 100%;
 	background-repeat: no-repeat;
 	height: 100%;
+  padding-top: 30px;
+  text-align: center;
 }
 #role_text h1 {
 	padding-top: 50%;
-	font-size: 5rem;
+	font-size: 3.7rem;
 }
 #role_text p {
 	font-size: 2rem;
@@ -98,57 +94,59 @@ body #role_container {
 }
 
 /*======= MEDIA QUERIES ========*/
-
-@media only screen and (max-width: 1200px){
-	body.home-index {
-		background-image: url(asset-path('bg-md.png'));
-	}
-	body.home-authentication {
-		background-image: url(asset-path('rolebg-md.png'));
-	}
-	#steps {
-		margin-bottom: 4rem;
-	}
-}
-
-@media only screen and (max-width: 1000px){
-	#steps {
-		font-size: 2rem;
-	}
-	#start_img {
-		width: 20%;
+/*---------- Page Responsive ------------*/
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  body .home_main{
+    min-width: 1024px;
+  }
+	#steps .style_text{
+		font-size: 1.6rem !important;
 	}
 	#role_text h1 {
-		font-size: 4rem;
-	}
-}
-
-@media only screen and (max-width: 730px){
-	body.home-index {
-		background-image: url(asset-path('bg-sm.png'));
-	}
-	body.home-authentication {
-		background-image: url(asset-path('rolebg-sm'));
-	}
-}
-
-@media only screen and (max-width: 565px){
-	body.home-index {
-		background-image: url(asset-path('bg-xs.png'));
-	}
-	#steps {
-		font-size: 1.5rem;
-	}
-	#start_img {
-		width: 30%;
-	}
-	#role_text h1 {
-		font-size: 2rem;
+		font-size: 3.4rem !important;
 	}
 	#role_text p {
-		font-size: 1rem;
-	}
-	.role_img p {
-		font-size: 2.2rem;
+		font-size: 1.8rem !important;
 	}
 }
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  body .home_main{
+    min-width: 768px;
+  }
+	#main-header {
+		font-size: 2.5rem !important;
+	}
+	#steps .style_text{
+		font-size: 1.3rem !important;
+	}
+	#start_img {
+		width: 13%;
+	}
+	#role_text h1 {
+		font-size: 2.5rem !important;
+	}
+	#role_text p {
+		font-size: 1.5rem !important;
+	}
+}
+@media all and (max-width: 768px) {
+  body .home_main{
+    min-width: 768px;
+  }
+	#main-header {
+		font-size: 2rem !important;
+	}
+	#steps .style_text{
+		font-size: 1rem !important;
+	}
+	#start_img {
+		width: 13%;
+	}
+	#role_text h1 {
+		font-size: 2rem !important;
+	}
+	#role_text p {
+		font-size: 1rem !important;
+	}
+}
+/*---------- Page Responsive: END ------------*/

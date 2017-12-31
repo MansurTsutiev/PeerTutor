@@ -1,9 +1,9 @@
 <div id="frame" class="animated bounceInUp">
-  <div class="container container_box">
+  <div class="container">
     <% tutee ||= @tutee %>
-    <div class="container">
-      <div class="col-sm-8 col-sm-offset-2" id="profile_box">
-        <h2 style="text-align: center;">Profile</h2>
+    <div class="row justify-content-center">
+      <div class="col-sm-8" id="profile_box">
+        <h2 class="page_title">Profile</h2>
 
         <span>First Name</span>
         <p><%= tutee.first_name %></p>
