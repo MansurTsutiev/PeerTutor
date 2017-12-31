@@ -1,0 +1,49 @@
+<style media="screen">
+  .btn_upload {
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+</style>
+
+<div id="frame" class="animated bounceInUp">
+
+  <h1 class="text-center">Edit <%= resource_name.to_s.humanize %></h1>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="">
+    <%= f.label :first_name, class: "h3"%><br />
+    <%= f.text_field :first_name, class: "form-control", autofocus: true%>
+    </div>
+
+    <div class="">
+    <%= f.label :last_name, class: "h3"%><br />
+    <%= f.text_field :last_name, class: "form-control", autofocus: true%>
+    </div>
+
+    <div class="">
+      <%= f.label :email, class: "h3"%><br />
+      <%= f.email_field :email, class: "form-control", autofocus: true %>
+    </div>
+
+    <div class="">
+      <%= f.label :image, class: "h3"%>
+      <%= f.file_field :avatar,  class: "btn_upload btn btn-outline-secondary" %>
+    </div>
+
+
+    <div class="actions">
+      <%= f.submit "Update", class: "btn btn-primary " %>
+    </div>
+
+  <% end %>
+
+  <p></p>
+  <%= button_to "Cancel my account", registration_path(resource_name), class: "btn btn-info", data: { confirm: "Are you sure?" }, method: :delete %>
+
+
+
+</div>
