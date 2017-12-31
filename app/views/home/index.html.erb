@@ -1,18 +1,19 @@
 <!--=============HOME PAGE=================-->
+<div class="home_main">
 <header>
-<%= render 'layouts/navigation_bar' %>
+	<%= render 'layouts/navigation_bar' %>
 </header>
 
-<div id="main_page_body" class="text-center">
+<div id="main_page_body">
 	<div class="style_text" id="main-header">
 		<p><%= @header_text%></p>
 	</div>
 	<%=image_tag("stepdoodle.png", alt: "doodle of how the website works", :id => "doodle_img")%>
-	<div class="container-fluid" id="steps">
+	<div id="steps">
   		<div class="row style_text">
-    		<div class="col-md-4 col-sm-4 col-xs-4"><%= @step_one %></div>
-    		<div class="col-md-4 col-sm-4 col-xs-4"><%= @step_two %></div>
-    		<div class="col-md-4 col-sm-4 col-xs-4"><%= @step_three %></div>
+    		<div class="col-md-4 col-sm-4 col-xs-4 col-4"><%= @step_one %></div>
+    		<div class="col-md-4 col-sm-4 col-xs-4 col-4" id="step2"><%= @step_two %></div>
+    		<div class="col-md-4 col-sm-4 col-xs-4 col-4"><%= @step_three %></div>
   		</div>
 	</div>
 
@@ -24,3 +25,4 @@
 	</div>
 </div>
 <%= render 'layouts/footer' %>
+</div>

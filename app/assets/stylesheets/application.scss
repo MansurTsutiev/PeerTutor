@@ -17,112 +17,89 @@
 
 body, html, .container-fluid, .sidebar, .body {
     height: 100%;
-    max-height: 100%;
+    font-size: 12px;   /* change default size due to switching v3 to v4 */
 }
 body {
-  margin: 0;
   font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #fff;
-  /*padding-left: 240px;*/
 }
-
+body .row_index{
+  padding: 0;
+  margin: 0;
+  min-width: 1280px;
+  max-width: 2560px;
+  height: -webkit-fill-available !important;
+}
 * {
-	box-sizing: border-box;
+  margin:0;
+  padding:0;
 }
-/*====================NAVIGATION BAR=======================*/
-nav .navbar {
-		margin-bottom: 0;
+a {
+  text-decoration: none;
 }
-
-.box {
-		background-position: center;
-		height: 500px;
-		position: relative;
-		background-size: cover;
-		padding: 170px;
-		color: white;
+a:hover {
+  text-decoration: none !important;
 }
-
-#button-box button {
-		width: 200px;
-		height: 250px;
+.row {
+  margin: 0 !important;
 }
-
-#button-box {
-		margin-top: 70px;
+.row .col {
+  margin: 0;
+  padding: 0;
+  height: inherit !important;
+}
+nav:focus{
+  outline: none;
 }
 
-#navigation {
-	margin: 0;
-	background-color: transparent;
-	border-top: none;
-	border-left: none;
-	border-right: none;
-	border-bottom: 1.3px solid #DBDBDB;
-	font-size: 1.1em;
-	padding: 0 7px;
-	padding-right: 20px;
+/*==================== NAVIGATION BAR =======================*/
+nav.nav_top {
+  border-bottom: 1.4px dashed rgba(0,0,0,.2);
+  padding: 0 !important;
+  margin: 0;
+  width: 100%;
+}
+nav ul li a {
+  color: #777;
+  font-size: 1.25rem;
+}
+nav ul li a:hover {
+  color: inherit;
+}
+#style_nav_txt {
+	font-weight: bold;
+	font-family: 'Pangolin', sans-serif;
+	font-size: 2.4rem;
+	color: #9075BD;
 }
 
-#navigation tutor-index {
-	display: none;
-}
-
-#navigation .btn {
+.nav_top .btn {
 	border: 2px solid #ABACD3;
 	padding: 7px 10px;
 	margin: 8px;
 	color: #ABACD3;
 }
+.navbar-header-leaf {
+	border-right: 1.3px solid #DBDBDB;
+	height: 40px;
+	margin: 7px 0;
+	width: 100%;
+}
+#navigation tutor-index {
+	display: none;
+}
+/*==================== NAVIGATION BAR: END =======================*/
 
-.style_nav_txt {
-	font-weight: bold;
-	font-family: 'Pangolin', sans-serif;
-	font-size: 2.5rem !important;
-	color: #9075BD !important;
-}
-
-@media only screen and (max-width: 730px){
-	.style_nav_txt {
-		font-size: 1.7rem !important;
-	}
-}
-/*==================== DASHBOARD: =======================*/
-main {
-  position: relative;
-  height: 100%;
-}
-main .helper {
-  background: rgba(0, 0, 0, 0.2);
-  color: #ffea92;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  padding: 1.2em 2em;
-  text-align: center;
-  border-radius: 20px;
-  font-size: 2em;
-  font-weight: bold;
-}
-main .helper span {
-  color: rgba(0, 0, 0, 0.2);
-  font-size: 0.4em;
-  display: block;
-}
+/*==================== SIDE NAVIGATION BAR: =======================*/
 .menu {
   background: linear-gradient(#4E4A85,#4E4A85,#80e3fd, white);
-  height: 100%;
-  width: 25%;
-  position: fixed;
-  top: 0;
-  left: 0;
+  height: -webkit-fill-available !important;
+  width: 100%;
   z-index: 5;
-  outline: none;
+  box-shadow: 5px 0 5px -5px #777;
 }
 .menu .avatar {
   background: rgba(0, 0, 0, 0.1);
-  padding: 50px 0 20px 0;
   text-align: center;
 }
 .menu .avatar #avatar {
@@ -133,209 +110,110 @@ main .helper span {
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
 }
 .menu .avatar h2 {
-  font-weight: normal;
-  margin-bottom: 0;
+  font-weight: 500;
+	font-family: 'Pangolin', sans-serif;
+	font-size: 2.4rem;
+	color: #777;
 }
 .menu ul {
   list-style: none;
-  padding: 0.5em 0;
+  padding: 0;
   margin: 0;
 }
 .menu ul li {
-  padding: 0.5em 1em 0.5em 3em;
-  font-size: 0.95em;
-  font-weight: regular;
-  background-repeat: no-repeat;
-  background-position: left 15px center;
-  background-size: auto 20px;
-  transition: all 0.15s linear;
-  cursor: pointer;
-}
-
-.menu ul li:hover {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-.menu ul li:focus {
+  padding: 20px 0 20px 40px;
   outline: none;
 }
-@media screen and (max-width: 900px) and (min-width: 400px) {
-  body {
-    padding-left: 90px;
+.menu ul li:hover {
+  border-right: 6px solid #80E3FD;
+  background: rgba(0, 0, 0, 0.1);
+}
+.menu ul li:focus {
+  border-right: 6px solid #80E3FD;
+}
+.menu .btn {
+  font-size: 1.1rem;
+  color: white;
+}
+.side_nav_bar_row {
+  padding: 40px 0;
+  width: 100%;
+}
+.side_nav_bar_row i {
+  text-align: center;
+  font-size: 1.1rem;
+}
+/*---------- Page Responsive ------------*/
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  .menu .btn {
+    font-size: 1rem;
   }
-  .menu {
-    width: 90px;
-  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
   .menu .avatar {
     padding: 0.5em;
     position: relative;
   }
-  .menu .avatar img {
-    width: 60px;
-  }
   .menu .avatar h2 {
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 100px;
-    margin: 0;
-    min-width: 200px;
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.4);
-    transform: translate3d(-20px, -50%, 0);
-    transition: all 0.15s ease-in-out;
+    font-size: 1.9rem;
   }
-  .menu .avatar:hover h2 {
-    opacity: 1;
-    transform: translate3d(0px, -50%, 0);
+  .menu .btn {
+    font-size: 0.9rem;
   }
-  .menu ul li {
-    height: 60px;
-    background-position: center center;
-    background-size: 30px auto;
-    position: relative;
+  .side_nav_bar_row i {
+    font-size: 0.9rem;
   }
-  .menu ul li span {
-    opacity: 0;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0.2em 0.5em;
-    border-radius: 4px;
-    top: 50%;
-    left: 80px;
-    transform: translate3d(-15px, -50%, 0);
-    transition: all 0.15s ease-in-out;
-  }
-  .menu ul li span:before {
-    content: '';
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 50%;
-    left: -5px;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-right: 5px solid rgba(0, 0, 0, 0.5);
-    transform: translateY(-50%);
-  }
-  .menu ul li:hover span {
-    opacity: 1;
-    transform: translate3d(0px, -50%, 0);
-  }
-}
-@media screen and (max-width: 400px) {
-  body {
-    padding-left: 0;
-  }
-  .menu {
-    width: 25%;
-    box-shadow: 0 0 0 100em rgba(0, 0, 0, 0);
-    transform: translate3d(-230px, 0, 0);
-    transition: all 0.3s ease-in-out;
-  }
-  .menu .smartphone-menu-trigger {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    left: 100%;
-    background: #5bc995;
-  }
-  .menu .smartphone-menu-trigger:before,
-  .menu .smartphone-menu-trigger:after {
-    content: '';
-    width: 50%;
-    height: 2px;
-    background: #fff;
-    border-radius: 10px;
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    z-index: 1000;
-    transform: translate3d(-50%, -50%, 0);
-  }
-  .menu .smartphone-menu-trigger:after {
-    top: 55%;
-    transform: translate3d(-50%, -50%, 0);
-  }
-  .menu ul li {
-    padding: 1em 1em 1em 3em;
-    font-size: 1.2em;
-  }
-  .menu:focus {
-    transform: translate3d(0, 0, 0);
-    box-shadow: 0 0 0 100em rgba(0, 0, 0, 0.6);
-  }
-  .menu:focus .smartphone-menu-trigger {
-    pointer-events: none;
-  }
+
 }
 
-.new_btn {
-	color: white;
+@media all and (max-width: 768px) {
+  .menu .avatar h2 {
+    font-size: 1.5rem;
+  }
+  .menu .btn {
+    font-size: 0.8rem;
+  }
+}
+/*---------- Page Responsive: END ------------*/
+/*==================== SIDE NAVIGATION BAR: END =======================*/
+
+/*==================== DASHBOARD: =======================*/
+
+/*---------- Decoration for each pages ------------*/
+.page_title {
+  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #190455;
+	text-transform: uppercase;
+	font-size: 2.5rem;
+	text-align: center;
+	font-weight: 430;
 }
 
-#outer_frame {
-}
+/*--------- Decoration for each pages: END ----------*/
 
-li {
-	font-family: 'Work Sans', sans-serif;
+/*---------- Page Responsive ------------*/
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+  body .row_index{
+    min-width: 1024px;
+  }
 }
-h1	{
-	font-family: 'Work Sans', sans-serif;
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  body .row_index{
+    min-width: 768px;
+  }
 }
+@media all and (max-width: 768px) {
+  body .row_index{
+    min-width: 768px;
+  }
+}
+/*---------- Page Responsive: END ------------*/
 
-h2 {
-  font-family: 'Work Sans', sans-serif !important;
-  color: #777 !important;
-}
-
-.navbar-header-leaf {
-	border-right: 1.3px solid #DBDBDB;
-	height: 40px;
-	margin: 7px 0;
-	width: 100%;
-}
-
-/*====================SIDE NAVIGATION BAR=======================*/
-
-.side_navigation_bar	{
-	font-size: 1.5rem;
-	padding: 27px 0;
-	margin: auto;
-	max-width: 65%;
-  text-align: -webkit-center;
-}
-
-.side_navigation_bar ul li a {
-	color: white;
-}
-
-.side_nav_bar_row {
-  padding: 0 !important;
-  width: 100%;
-}
-
-.side_nav_bar_row i {
-  text-align: center;
-}
-
-.side_nav_bar_row .col {
-  height: 100% !important;
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
-  padding: 15px 0;
-}
-
-.side_nav_bar_row div {
-  padding-top: 0 !important;
-  padding-left: 0 !important;
-}
 /*==================== DASHBOARD: END =======================*/
-
 
 /*==================== FOOTER:  =======================*/
 footer {
-  position: absolute;
   width: 100%;
   text-align: center;
 	color: #553f7a;
