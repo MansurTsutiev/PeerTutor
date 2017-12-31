@@ -46,46 +46,18 @@ body.tutor-index {
 	width: 15%;
 }
 /*==================== SIDE NAVIGATION BAR: =======================*/
-.menu.tutor_menu ul {
-  list-style: none;
-  padding: 0.5em 0;
-  margin: 0;
-}
-.menu.tutor_menu ul li {
-  padding: 10px 0;
-  outline: none;
-}
-.menu.tutor_menu ul li .btn:hover {
-  border-bottom: 1.5px solid white;
-}
-.menu.tutor_menu ul li .btn:focus {
-  border-bottom: 1.5px solid white;
-}
-.menu.tutor_menu .btn {
-  font-size: 1.2rem;
-  color: white;
-}
-.tutor_menu .side_nav_bar_row {
-  padding: 30px 0;
-  width: 100%;
-}
-.tutor_menu .side_nav_bar_row i {
-  text-align: center;
-  font-size: 0.7rem;
-}
 
 /*---------- Light Bulb ------------*/
-
 .menu.tutor_menu .avatar #live_btn {
 	height: 100%;
 }
 .tutor_menu .is_live_box {
 	margin: auto;
 	padding: 5px;
-	border: 1.7px solid yellow;
-	border-radius: 10px;
-	height: 47px;
-	width: 150px;
+	border: 1.5px solid yellow;
+	border-radius: 8px;
+	height: 41px;
+	width: 120px;
 	box-shadow: 0 5px 15px rgba(0,0,0,0.20);
 }
 .tutor_menu .is_live_box:hover {
@@ -95,45 +67,6 @@ body.tutor-index {
 }
 
 /*---------- Light Bulb: END ------------*/
-
-/*---------- Page Responsive ------------*/
-@media all and (min-width: 1024px) and (max-width: 1280px) {
-	.menu.tutor_menu .btn {
-	    font-size: 1rem;
-	  }
-		.tutor_menu .side_nav_bar_row i {
-		  font-size: 0.7rem;
-		}
-}
-@media all and (min-width: 768px) and (max-width: 1024px) {
-  .menu.tutor_menu .avatar {
-    padding: 0.5em;
-    position: relative;
-  }
-  .menu.tutor_menu .avatar h2 {
-    font-size: 1.8rem;
-  }
-  .menu.tutor_menu .btn {
-    font-size: 0.8rem;
-  }
-  .tutor_menu .side_nav_bar_row i {
-    font-size: 0.5rem;
-  }
-
-}
-
-@media all and (max-width: 768px) {
-  .menu.tutor_menu .avatar h2 {
-    font-size: 1rem;
-  }
-	.menu.tutor_menu .avatar h2 {
-    font-size: 1.5rem;
-  }
-  .menu.tutor_menu .btn {
-    font-size: 0.5rem;
-  }
-}
-/*---------- Page Responsive: END ------------*/
 
 /*==================== FIRST TIME TUTOR FORM: =======================*/
 body.tutor-first_time_tutor {

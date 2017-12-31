@@ -21,69 +21,6 @@ body.tutee-index {
 .nav_link:hover {
 	background-color: #F4EDFE;
 }
-/*==================== SIDE NAVIGATION BAR: =======================*/
-.menu.tutee_menu ul {
-  list-style: none;
-  padding: 0.5em 0;
-  margin: 0;
-}
-.menu.tutee_menu ul li {
-  padding: 10px 0;
-  outline: none;
-}
-.menu.tutee_menu ul li .btn:hover {
-  border-bottom: 1.5px solid white;
-}
-.menu.tutee_menu ul li .btn:focus {
-  border-bottom: 1.5px solid white;
-}
-.menu.tutee_menu .btn {
-  font-size: 1.3rem;
-  color: white;
-}
-.tutee_menu .side_nav_bar_row {
-  padding: 30px 0;
-  width: 100%;
-}
-.tutee_menu .side_nav_bar_row i {
-  text-align: center;
-  font-size: 1rem;
-}
-/*---------- Page Responsive ------------*/
-@media all and (min-width: 1024px) and (max-width: 1280px) {
-  .menu.tutee_menu .btn {
-    font-size: 1.15rem;
-  }
-}
-
-@media all and (min-width: 768px) and (max-width: 1024px) {
-  .menu.tutee_menu .avatar {
-    padding: 0.5em;
-    position: relative;
-  }
-  .menu.tutee_menu .avatar h2 {
-    font-size: 1.9rem;
-  }
-  .menu.tutee_menu .btn {
-    font-size: 0.9rem;
-  }
-  .tutee_menu .side_nav_bar_row i {
-    font-size: 0.6rem;
-  }
-
-}
-
-@media all and (max-width: 768px) {
-  .menu.tutee_menu .avatar h2 {
-    font-size: 1.5rem;
-  }
-  .menu.tutee_menu .btn {
-    font-size: 0.8rem;
-  }
-}
-/*---------- Page Responsive: END ------------*/
-
-/*==================== SIDE NAVIGATION BAR: END =======================*/
 
 /*==================== FIND TUTOR: =======================*/
 #find_tutor_box{
