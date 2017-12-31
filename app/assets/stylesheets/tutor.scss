@@ -2,11 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+/*---------- Style Font ------------*/
 .font_styling {
 	font-family: 'Nunito', sans-serif;
 	font-weight: bold;
 	color: #190455;
 }
+
+/*---------- Style Font: END ------------*/
 body.tutor-index {
 	background-image: url(asset-path('background/bg_dot.jpg'));
 	background-size: 100%;
@@ -46,7 +49,6 @@ body.tutor-index {
 	width: 15%;
 }
 /*==================== SIDE NAVIGATION BAR: =======================*/
-
 /*---------- Light Bulb ------------*/
 .menu.tutor_menu .avatar #live_btn {
 	height: 100%;
@@ -67,6 +69,7 @@ body.tutor-index {
 }
 
 /*---------- Light Bulb: END ------------*/
+/*==================== SIDE NAVIGATION BAR: END =======================*/
 
 /*==================== FIRST TIME TUTOR FORM: =======================*/
 body.tutor-first_time_tutor {
@@ -132,55 +135,52 @@ input[type='checkbox'] {
 	margin: auto;
 }
 
+/*==================== INCOMING REQUEST: =======================*/
 
+/*==================== INCOMING REQUEST: END =======================*/
 
-.card {
+/*==================== Session Card: =======================*/
+.session_card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.2s;
-    width: 40%;
-    border-radius: 7px;
+    //border-radius: 13px;
+		background-color: white;
 }
-
-.card:hover {
+.session_card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-
-.card .btn {
+.session_card .btn {
 	width: inherit !important;
 }
-
-img {
-    border-radius: 5px 5px 0 0;
-}
-
-.container {
-    padding: 2px 16px;
-}
-
-#incoming_requests h3 {
-	color: #777;
-	font-family: 'Work Sans', sans-serif;
-	font-size: 1.7em;
-	font-weight: 100;
-}
-
-.card h3 {
+.session_card h3 {
 	color: #777;
 	font-family: 'Work Sans', sans-serif;
 	font-size: 1.7em;
 }
-
-.card label {
+.session_card label {
 	color: #777;
 	font-family: 'Work Sans', sans-serif;
 	font-size: 1em;
 	font-weight: 100;
 }
-
-.card {
+.session_card {
 	padding: 35px;
 }
-
-.card hr {
+.session_card hr {
 	margin-top: 0;
 }
+.session_card_head {
+	//background-color: blue;
+	text-align: center;
+}
+.session_card_head .session_img{
+	margin: auto;
+	width: 50%;
+
+}
+
+/*==================== Session Card: END =======================*/
+
+// img {
+//     border-radius: 5px 5px 0 0;
+// }

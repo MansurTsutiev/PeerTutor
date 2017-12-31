@@ -51,6 +51,25 @@ a:hover {
 nav:focus{
   outline: none;
 }
+/*---------- Style Font ------------*/
+.page_title {
+  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #190455;
+	text-transform: uppercase;
+	font-size: 2.5rem;
+	text-align: center;
+	font-weight: 430;
+}
+.head_style {
+  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #190455;
+  font-size: 2rem;
+  font-weight: 350;
+}
+.text_style {
+
+}
+/*---------- Style Font: END ------------*/
 
 /*==================== NAVIGATION BAR =======================*/
 nav.nav_top {
@@ -84,9 +103,6 @@ nav ul li a:hover {
 	height: 40px;
 	margin: 7px 0;
 	width: 100%;
-}
-#navigation tutor-index {
-	display: none;
 }
 /*==================== NAVIGATION BAR: END =======================*/
 
@@ -179,18 +195,6 @@ nav ul li a:hover {
 /*==================== SIDE NAVIGATION BAR: END =======================*/
 
 /*==================== DASHBOARD: =======================*/
-
-/*---------- Decoration for each pages ------------*/
-.page_title {
-  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #190455;
-	text-transform: uppercase;
-	font-size: 2.5rem;
-	text-align: center;
-	font-weight: 430;
-}
-
-/*--------- Decoration for each pages: END ----------*/
 
 /*---------- Page Responsive ------------*/
 @media all and (min-width: 1024px) and (max-width: 1280px) {

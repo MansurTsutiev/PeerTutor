@@ -2,37 +2,39 @@
   <div class="">
   <div id="incoming_requests">
 
-
-    <div class="row">
-      <div class="col-sm-10 col-sm-offset-1">
-        <% if @tutoring_sessions.nil? == true || @tutoring_sessions.count == 0 %>
-          <div class="alert alert-info" role="alert">
+    <!-- Alert -->
+    <% if @tutoring_sessions.nil? == true || @tutoring_sessions.count == 0 %>
+      <div class="row justify-content-center">
+        <div class="col col-12 p-5">
+          <div class="alert alert-info p-3" role="alert">
             <h4 class="alert-heading"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>   You have no request.</h4>
           </div>
-        <% else %>
-      </div>
-
-
-        <h3 class="text-center">You have <%= @tutoring_sessions.count %> requests.</h3>
-
-        <% @tutoring_sessions.each do |session| %>
-        <div class="col-sm-4 col-sm-offset-1 card" id="card" data-tutee_id=<%= session.user_id %>>
-          <div class="card_top text-center">
-          <%= image_tag "avatar.png", size: "60x60" %>
-          <h3><%= session.user.first_name %> <%= session.user.last_name %></h3>
         </div>
-          <div class="container">
+      </div>
+    <% else %>
+    <!-- Alert: END -->
 
-            <label>Subject</label>
-            <p><%= session.course.subject.abbrev %></p>
-            <hr>
-            <label>Course</label>
-            <p><%= session.course.number %></p>
-            <hr>
-            <label>Question</label>
-            <p><%= session.question %></p>
-            <hr>
-            <%= link_to "Accept", tutor_accept_request_path(session_id: session.id), id: "accept", class: "btn btn-primary", remote: true %>
+    <div class="row">
+      <div class="col col-12 pb-3 text-center">
+        <h3 class="head_style">You have <%= @tutoring_sessions.count %> requests.</h3>
+      </div>
+    </div>
+    <div class="row">
+        <% @tutoring_sessions.each do |session| %>
+        <div class="col col-12 session_card" id="card" data-tutee_id=<%= session.user_id %>>
+          <div class="row">
+            <div class="col-4 session_card_head align-self-center">
+              <%= image_tag "avatar.png", class: "session_img"%>
+            </div>
+            <div class="col-8 p-5">
+              <h3><%= session.user.first_name %> <%= session.user.last_name %></h3>
+              <p><%= session.course.subject.abbrev %><%= session.course.number %>  <%= session.course.name %></p>
+              <hr>
+              <label>Question</label>
+              <p><%= session.question %></p>
+              <hr>
+              <%= link_to "Accept", tutor_accept_request_path(session_id: session.id), id: "accept", class: "btn btn-primary", remote: true %>
+            </div>
           </div>
         </div>
         <% end %>
