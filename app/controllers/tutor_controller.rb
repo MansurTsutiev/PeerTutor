@@ -172,6 +172,7 @@ class TutorController < ApplicationController
   end
 
   def decline_request
+    session = TutoringSession.find(params[:session_id]).update_attributes(tutor_id: nil)
     
   end
 
