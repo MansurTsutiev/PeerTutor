@@ -172,13 +172,38 @@ class TutorController < ApplicationController
   end
 
   def decline_request
-    session = TutoringSession.find(params[:session_id]).update_attributes(tutor_id: nil)
-    
+    TutoringSession.find(params[:session_id]).update_attributes(tutor_id: nil)
+    session = TutoringSession.find(params[:session_id])
+    tutee_id = session.user_id
+    course_id = session.course_id
+    ActionCable.server.broadcast(
+      "conversations-#{tutee_id}",
+      command: "session_declined",
+      tutor_id: current_user.id,
+      partial: ApplicationController.render(partial: 'tutee/list_of_tutors', locals: {available_tutors: available_tutors(session), item2: "" })
+    )
+    return
   end
 
   private
 
   def tutor_course_params
+
+  end
+
+  def available_tutors(session)
+    @tutors = User.where(is_tutor: true, is_live: true).where.not(id: session.user_id, location: nil).all  # @tutors.ids returns the array of live_tutor's ids
+
+    course_tutor_ids = Array.new
+
+    @tutors.each do |d|
+      @course_tutor = TutorCourse.where(tutor_id: d, course_id: session.course_id.to_i).first
+      if !@course_tutor.nil?
+        course_tutor_ids << User.find(@course_tutor.tutor_id)
+      else
+      end
+    end
+    @available_tutors = course_tutor_ids
 
   end
 
