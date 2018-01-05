@@ -1,9 +1,15 @@
+<% if current_user.avatar.present? %>
+<% image = current_user.avatar %>
+<% else %>
+<% image = "avatar.png" %>
+<% end %>
+
 <nav class="menu tutor_menu" tabindex="0">
   <div class="smartphone-menu-trigger"></div>
 
     <header class="avatar pt-5">
         <%= link_to tutor_index_path do %>
-        <%= image_tag "avatar.png", :id => "avatar" %>
+        <%= image_tag image, :id => "avatar" %>
         <h2 class="py-4" id="dash_board_user_name"><%= current_user.first_name %></h2>
         <% end %>
         <div class="pb-4">

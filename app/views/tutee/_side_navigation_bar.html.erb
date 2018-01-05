@@ -1,8 +1,14 @@
+<% if current_user.avatar.present? %>
+<% image = current_user.avatar %>
+<% else %>
+<% image = "avatar.png" %>
+<% end %>
+
 <nav class="menu tutee_menu" tabindex="0">
   <!-- <div class="smartphone-menu-trigger"></div> -->
   <header class="avatar pt-5">
     <%= link_to tutee_index_path do %>
-    <%= image_tag "avatar.png", :id => "avatar"%>
+    <%= image_tag image, :id => "avatar"%>
     <div class="py-4"><h2 id="dash_board_user_name"><%= current_user.first_name %></h2></div>
     <% end %>
   </header>
@@ -48,7 +54,7 @@
       <li tabindex="0" class="side_nav_bar_row">
         <span>
           <div class="d-inline"><i class="fa fa-chevron-circle-up" aria-hidden="true"  style="color:white"></i></div>
-          <div class="d-inline"><%= link_to "Tutee Profile", tutee_profile_path, remote: true, class: "btn new_btn" %></div>
+          <div class="d-inline"><%= link_to "Tutee Profile", edit_user_registration_path, remote: true, class: "btn new_btn" %></div>
           <div class="d-inline"><mark id="" class=""></mark></div>
         </span>
       </li>

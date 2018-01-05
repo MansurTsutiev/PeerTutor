@@ -32,3 +32,4 @@
 *.csv
 lib/tasks/subjects.rb
 *.rake
+/public/system/*
