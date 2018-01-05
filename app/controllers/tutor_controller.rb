@@ -171,6 +171,10 @@ class TutorController < ApplicationController
     end
   end
 
+  def decline_request
+    
+  end
+
   private
 
   def tutor_course_params
