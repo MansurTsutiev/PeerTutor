@@ -72,7 +72,8 @@ class TutorController < ApplicationController
     ActionCable.server.broadcast(
       "conversations-#{@tutee.id}",
       command: "session_completed",
-      tutee_id: current_user.id
+      tutor_id: current_user.id,
+      tips_box: ApplicationController.render(partial: 'tutee/tips_management')
     )
     respond_to do |format|
       format.js {render 'incoming_requests'}
