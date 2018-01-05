@@ -16,6 +16,8 @@
     <p><%= session.question %></p>
     <hr>
     <%= link_to "Accept", tutor_accept_request_path(session_id: session.id), id: "accept", class: "btn btn-primary", remote: true %>
+    <br></br>
+    <%= link_to "Decline", "", id: "decline", class: "b btn btn-primary", remote: true %>
   </div>
 </div>
 <% end %>
