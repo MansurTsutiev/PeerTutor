@@ -119,7 +119,7 @@ class TuteeController < ApplicationController
   end
 
   def cancel_tutor
-    TutoringSession.where(user_id: current_user.id).last.update(tutor_id: nil)
+    TutoringSession.where(user_id: current_user.id).last.update(tutor_id: nil, accepted: false)
     respond_to do |format|
       format.js {render inline: "location.reload();"}
     end
