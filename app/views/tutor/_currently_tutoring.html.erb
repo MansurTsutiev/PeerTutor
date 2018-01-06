@@ -1,32 +1,32 @@
 <div id="frame" class="animated bounceInUp">
 
-  <div class="container container_box">
+  <div class="container">
+    <div class="row">
+      <%= render partial: "session_card", locals: {tutoring_sessions: @tutoring_sessions} %>
+      <!--
+      <h1 class="text-center">You're tutoring <%= @tutoring_sessions.count %> people.</h1>
 
-    <%= render partial: "session_card", locals: {tutoring_sessions: @tutoring_sessions} %>
-    <!--
-    <h1 class="text-center">You're tutoring <%= @tutoring_sessions.count %> people.</h1>
-
-    <div class="container">
-      <table class="table table-striped">
-        <tr>
-          <th>Tutee</th>
-          <th>Subject</th>
-          <th>Course</th>
-          <th>Question</th>
-          <th></th>
-        </tr>
-        <% @tutoring_sessions.each do |session| %>
+      <div class="container">
+        <table class="table table-striped">
           <tr>
-            <td><%= session.user.first_name %> <%= session.user.last_name %></td>
-            <td><%= session.course.subject.abbrev %></td>
-            <td><%= session.course.number %></td>
-            <td><%= session.question %></td>
-            <td><%= link_to "Done", "", class: "btn btn-primary" %></td>
+            <th>Tutee</th>
+            <th>Subject</th>
+            <th>Course</th>
+            <th>Question</th>
+            <th></th>
           </tr>
-        <% end %>
-      </table>
+          <% @tutoring_sessions.each do |session| %>
+            <tr>
+              <td><%= session.user.first_name %> <%= session.user.last_name %></td>
+              <td><%= session.course.subject.abbrev %></td>
+              <td><%= session.course.number %></td>
+              <td><%= session.question %></td>
+              <td><%= link_to "Done", "", class: "btn btn-primary" %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    -->
     </div>
-
-  -->
   </div>
 </div>

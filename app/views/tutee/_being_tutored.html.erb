@@ -1,28 +1,45 @@
 <div id="frame" class="animated bounceInUp">
-  <div class="container container_box">
+  <div class="container">
     <% tutor ||= @tutor %>
     <% session ||= @tutoring_session %>
 
-    <h2> Currently In Session </h2>
-
-    <div class="col-sm-4 col-sm-offset-1 card" data-tutee_id=<%= session.user_id %>>
-      <div class="card_top text-center">
-      <%= image_tag "avatar.png", size: "60x60" %>
-      <h3><%= tutor.first_name %> <%= tutor.last_name %></h3>
-    </div>
-      <div class="container">
-
-        <label>Subject</label>
-        <p><%= session.course.subject.abbrev %></p>
-        <hr>
-        <label>Course</label>
-        <p><%= session.course.number %></p>
-        <hr>
-        <label>Question</label>
-        <p><%= session.question %></p>
-        <hr>
-        <%= link_to "Cancel", tutee_cancel_tutoring_session_path(tutor_id: session.tutor_id), id: "complete", class: "btn btn-warning", remote: true %>
+    <div class="row">
+      <div class="col col-12 pb-3 text-center">
+        <h3 class="head_style"> Currently In Session </h3>
       </div>
+    </div>
+
+    <div class="row">
+        <div class="col col-12 session_card" id="card" data-tutee_id=<%= session.user_id %>>
+          <div class="row">
+            <div class="col-4 session_card_head align-self-center">
+              <div class="circle">
+                <% if tutor.avatar.present? %>
+                  <%= image_tag tutor.user.avatar, class: "session_img"%>
+                <% else %>
+                  <h1 id="session_img_init"><%= tutor.first_name[0] %></h1>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-8 p-5">
+              <div class="row">
+                <h3><%= tutor.first_name %> <%= tutor.last_name %></h3>
+              </div>
+              <div class="py-4">
+                <div class="row">
+                  <p id="card_subject"><span class="bold"> <%= session.course.subject.abbrev %><%= session.course.number %></span> <%= session.course.name %></p>
+                </div>
+
+                <label>Question</label>
+                <div class="row" id="card_question">
+                    <p><%= session.question %></p>
+                </div>
+              </div>
+              <%= link_to "Cancel", tutee_cancel_tutoring_session_path(tutor_id: session.tutor_id), id: "complete", class: "btn btn-lg btn-block cancel_btn", remote: true %>
+              <%= link_to "Complete", tutee_cancel_tutoring_session_path(tutor_id: session.tutor_id), id: "", class: "btn btn-lg btn-block complete_btn", remote: true %>
+            </div>
+          </div>
+        </div>
     </div>
 
   </div>

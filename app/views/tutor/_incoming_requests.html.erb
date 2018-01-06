@@ -19,28 +19,40 @@
         <h3 class="head_style">You have <%= @tutoring_sessions.count %> requests.</h3>
       </div>
     </div>
+
     <div class="row">
         <% @tutoring_sessions.each do |session| %>
-        <div class="col col-12 session_card" id="card" data-tutee_id=<%= session.user_id %>>
+        <div class="col col-12 session_card" id="card" style="min-width: 450px;" data-tutee_id=<%= session.user_id %>>
           <div class="row">
             <div class="col-4 session_card_head align-self-center">
-              <%= image_tag "avatar.png", class: "session_img"%>
+              <div class="circle">
+                <% if session.user.avatar.present? %>
+                  <%= image_tag session.user.avatar, class: "session_img"%>
+                <% else %>
+                  <h1 id="session_img_init"><%= session.user.first_name[0] %></h1>
+                <% end %>
+              </div>
             </div>
             <div class="col-8 p-5">
-              <h3><%= session.user.first_name %> <%= session.user.last_name %></h3>
-              <p><%= session.course.subject.abbrev %><%= session.course.number %>  <%= session.course.name %></p>
-              <hr>
-              <label>Question</label>
-              <p><%= session.question %></p>
-              <hr>
-              <%= link_to "Accept", tutor_accept_request_path(session_id: session.id), id: "accept", class: "btn btn-primary", remote: true %>
+              <div class="row">
+                <h3><%= session.user.first_name %> <%= session.user.last_name %></h3>
+              </div>
+              <div class="py-4">
+                <div class="row">
+                  <p id="card_subject"><span class="bold"> <%= session.course.subject.abbrev %><%= session.course.number %></span> <%= session.course.name %></p>
+                </div>
+
+                <label>Question</label>
+                <div class="row" id="card_question">
+                    <p><%= session.question %></p>
+                </div>
+              </div>
+              <%= link_to "Accept", tutor_accept_request_path(session_id: session.id), id: "accept", class: "btn btn-lg btn-block accept_btn", remote: true %>
             </div>
           </div>
         </div>
         <% end %>
       <% end %>
-
-
     </div>
 
   </div>
