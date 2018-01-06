@@ -14,8 +14,8 @@
 //= require_tree .
 
 //**************************** DASHBOARD ***************************
-//responsible for switching views in the dashboard on click
 $(function(){
+  //responsible for switching views in the dashboard on click
   $("a.load").click(function (e) {
     e.preventDefault();
     $("#tutor_view_frame").load($(this).attr("href"));
@@ -24,6 +24,11 @@ $(function(){
   $("a.tu_load").click(function (e) {
     e.preventDefault();
     $("#tutee_view_frame").load($(this).attr("href"));
+  });
+
+  //for side nav bar, button click triggers focus acction
+  $(".menu ul li .btn").click(function (e) {
+    $(this).closest("li").focus();
   });
 });
 
