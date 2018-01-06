@@ -119,7 +119,13 @@ class TuteeController < ApplicationController
   end
 
   def cancel_tutor
+    @tutor = User.find(params[:tutor_id])
     TutoringSession.where(user_id: current_user.id).last.update(tutor_id: nil, accepted: false)
+    ActionCable.server.broadcast(
+      "conversations-#{@tutor.id}",
+      command: "session_canceled",
+      tutee_id: current_user.id
+    )
     respond_to do |format|
       format.js {render inline: "location.reload();"}
     end
