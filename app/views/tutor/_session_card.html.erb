@@ -1,21 +1,27 @@
-<% tutoring_sessions.each do |session| %>
-<div class="col-sm-4 col-sm-offset-1 card" data-tutee_id=<%= session.user_id %>>
-  <div class="card_top text-center">
-  <%= image_tag "avatar.png", size: "60x60" %>
-  <h3><%= session.user.first_name %> <%= session.user.last_name %></h3>
-</div>
-  <div class="container">
+<% if tutoring_sessions.count == 0 %>
+      <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading"><i class="fa fa-graduation-cap" aria-hidden="true"></i>   There are no accepted requests.</h4>
+      </div>
+<% else %>
+      <% tutoring_sessions.each do |session| %>
+      <div class="col-sm-4 col-sm-offset-1 card" data-tutee_id=<%= session.user_id %>>
+        <div class="card_top text-center">
+        <%= image_tag "avatar.png", size: "60x60" %>
+        <h3><%= session.user.first_name %> <%= session.user.last_name %></h3>
+      </div>
+        <div class="container">
 
-    <label>Subject</label>
-    <p><%= session.course.subject.abbrev %></p>
-    <hr>
-    <label>Course</label>
-    <p><%= session.course.number %></p>
-    <hr>
-    <label>Question</label>
-    <p><%= session.question %></p>
-    <hr>
-    <%= link_to "Complete", tutor_complete_tutoring_session_path(session_id: session.id, user_id: session.user_id), id: "complete", class: "btn btn-primary", remote: true %>
-  </div>
-</div>
+          <label>Subject</label>
+          <p><%= session.course.subject.abbrev %></p>
+          <hr>
+          <label>Course</label>
+          <p><%= session.course.number %></p>
+          <hr>
+          <label>Question</label>
+          <p><%= session.question %></p>
+          <hr>
+          <%= link_to "Complete", tutor_complete_tutoring_session_path(session_id: session.id, user_id: session.user_id), id: "complete", class: "btn btn-primary", remote: true %>
+        </div>
+      </div>
+      <% end %>
 <% end %>

@@ -12,9 +12,6 @@
         <% else %>
       </div>
 
-
-        <h3 class="text-center">You have <%= @tutoring_sessions.count %> requests.</h3>
-
           <%= render partial: 'tutor/tutoring_sessions', locals: {tutoring_sessions: @tutoring_sessions} %>
 
 
