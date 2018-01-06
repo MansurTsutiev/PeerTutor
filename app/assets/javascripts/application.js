@@ -26,9 +26,14 @@ $(function(){
     $("#tutee_view_frame").load($(this).attr("href"));
   });
 
-  //for side nav bar, button click triggers focus acction
+  //for side nav bar, child ('button') triggers parent action ('li')
   $(".menu ul li .btn").click(function (e) {
     $(this).closest("li").focus();
+  });
+
+  //for side nav bar, parent ('li') triggers child('button')
+  $(".menu ul li").click(function (e) {
+    $(this).find(".btn")[0].click();
   });
 });
 
