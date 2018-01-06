@@ -43,6 +43,8 @@ Rails.application.routes.draw do
 
   get 'tutee/pick_tutor'
 
+  get 'tutee/cancel_tutor'
+
   get 'tutee/cancel_tutoring_session'
 
   get 'tutee/profile'
