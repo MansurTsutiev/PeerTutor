@@ -40,6 +40,9 @@ a {
 a:hover {
   text-decoration: none !important;
 }
+a:focus {
+  box-shadow: none !important;
+}
 .row {
   margin: 0 !important;
 }
@@ -142,14 +145,6 @@ nav ul li a:hover {
   background: rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-// .menu .avatar #avatar {
-//   width: 120px;
-//   height: 110px;
-//   border-radius: 50%;
-//   overflow: hidden;
-//   border: 4px solid #fff;
-//   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
-// }
 .menu .avatar .circle {
   width: 120px;
   height: 114px;
@@ -203,6 +198,8 @@ nav ul li a:hover {
 .side_nav_bar_row i {
   text-align: center;
   font-size: 1.1rem;
+}
+.menu ul li a:focus {
 }
 /*---------- Page Responsive ------------*/
 @media all and (min-width: 1024px) and (max-width: 1280px) {
@@ -258,6 +255,7 @@ nav ul li a:hover {
   }
 }
 /*---------- Page Responsive: END ------------*/
+/*==================== DASHBOARD: END =======================*/
 
 /*==================== Session Card: =======================*/
 .session_card {
@@ -322,8 +320,6 @@ nav ul li a:hover {
 
 /*==================== Session Card: END =======================*/
 
-
-/*==================== DASHBOARD: END =======================*/
 
 /*==================== FOOTER:  =======================*/
 footer {
