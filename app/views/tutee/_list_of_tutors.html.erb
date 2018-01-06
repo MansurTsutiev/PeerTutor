@@ -1,26 +1,45 @@
 <div id="frame" class="animated bounceInUp">
-<div class="col-sm-8 col-sm-offset-2 container_box">
+<div id="list_of_tutors">
   <% @available_tutors ||= available_tutors %>
   <% if @available_tutors == nil || @available_tutors.count == 0 %>
-    <h2> Sorry! There is not available tutors. </h2>
-    <%= link_to "Cancel", tutee_cancel_tutoring_session_path(tutor_id: nil), class: "btn btn-warning btn-lg cancel", remote: true %>
+      <div class="row">
+        <h2 class="head_style pb-5"> Sorry! There is not available tutors. </h2>
+      </div>
+      <div class="row">
+        <%= link_to "Cancel", tutee_cancel_tutoring_session_path(tutor_id: nil), class: "btn btn-lg btn-block cancel_btn", remote: true %>
+      </div>
   <% else %>
-  <h1>Avalable Tutors:</h1>
-  <table class="table">
-    <thead>
-    </thead>
+    <div class="row">
+      <div class="col col-12" style="text-align: center">
 
-    <% @available_tutors.to_a.each do |tutor| %>
-    <tbody>
-      <tr>
-        <td><%= image_tag("avatar.png", size: "70x70") %></td>
-        <td><%= tutor.first_name %></td>
-        <td><%= tutor.last_name %></td>
-        <td><%= link_to "Choose",  tutee_pick_tutor_path(tutor_id: tutor.id), class: "btn btn-primary", remote: true %></td>
-      </tr>
-      <% end %>
-    </tbody>
-  </table>
+        <h3 class="text-muted pb-4"><%= @tutoring_session.course.subject.abbrev %> <%= @tutoring_session.course.number %> - <%= @tutoring_session.course.name %> </h3>
+        <h1 class="head_style pb-3">Available Tutors:</h1>
+          <% @available_tutors.to_a.each do |tutor| %>
+          <hr />
+          <div class="row">
+            <div class="col-3">
+                <div class="circle">
+                  <% if tutor.avatar.present? %>
+                    <%= image_tag tutor.avatar, class: "session_img"%>
+                  <% else %>
+                    <h1 id="session_img_init"><%= tutor.first_name[0] %></h1>
+                  <% end %>
+                </div>
+            </div>
+            <div class="col-3 align-self-center">
+              <h5><%= tutor.first_name %></h5>
+            </div>
+            <div class="col-3 align-self-center">
+              <h5><%= tutor.last_name %></h5>
+            </div>
+            <div class="col-3 align-self-center">
+              <%= link_to "Choose",  tutee_pick_tutor_path(tutor_id: tutor.id), class: "btn btn-lg complete_btn", remote: true %>
+            </div>
+          </div>
+          <% end %>
+
+      </div>
+    </div>
   <% end %>
 </div>
 </div>

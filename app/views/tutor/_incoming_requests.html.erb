@@ -2,24 +2,22 @@
   <div class="">
   <div id="incoming_requests">
 
-
-    <div class="row">
-      <div class="col-sm-10 col-sm-offset-1">
-        <% if @tutoring_sessions.nil? == true || @tutoring_sessions.count == 0 %>
-          <div class="alert alert-info" role="alert">
+    <!-- Alert -->
+    <% if @tutoring_sessions.nil? == true || @tutoring_sessions.count == 0 %>
+      <div class="row justify-content-center">
+        <div class="col col-12 p-5">
+          <div class="alert alert-info p-3" role="alert">
             <h4 class="alert-heading"><i class="fa fa-graduation-cap" aria-hidden="true"></i>   You have no request.</h4>
           </div>
-        <% else %>
+        </div>
       </div>
+    <% else %>
+    <!-- Alert: END -->
 
-          <%= render partial: 'tutor/tutoring_sessions', locals: {tutoring_sessions: @tutoring_sessions} %>
-
-
-      <% end %>
-
-
+    <div class="row">
+        <%= render partial: 'tutor/tutoring_sessions', locals: {tutoring_sessions: @tutoring_sessions} %>
     </div>
-
+    <% end %>
   </div>
 </div>
 </div>

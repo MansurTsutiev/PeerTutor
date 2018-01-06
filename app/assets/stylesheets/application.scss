@@ -40,6 +40,9 @@ a {
 a:hover {
   text-decoration: none !important;
 }
+a:focus {
+  box-shadow: none !important;
+}
 .row {
   margin: 0 !important;
 }
@@ -51,6 +54,49 @@ a:hover {
 nav:focus{
   outline: none;
 }
+/*---------- Style Font ------------*/
+.page_title {
+  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #190455;
+	text-transform: uppercase;
+	font-size: 2.5rem;
+	text-align: center;
+	font-weight: 430;
+}
+.head_style {
+  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
+  color: #190455;
+  font-size: 2rem;
+  font-weight: 400;
+}
+.text_style {
+
+}
+/** Button Style **/
+.accept_btn {
+  background: #EB6E78;
+  color: #fff;
+}
+.cancel_btn {
+  background: #EEEEEE;
+  color: inherit;
+}
+.complete_btn {
+  background: #4DC1C6;
+  color: #fff;
+}
+.accept_btn:hover {
+  background: #E95E69;
+  color: #fff;
+}
+.cancel_btn:hover {
+  color: inherit;
+}
+.complete_btn:hover {
+  background: #46B0B4;
+  color: #fff;
+}
+/*---------- Style Font: END ------------*/
 
 /*==================== NAVIGATION BAR =======================*/
 nav.nav_top {
@@ -85,9 +131,6 @@ nav ul li a:hover {
 	margin: 7px 0;
 	width: 100%;
 }
-#navigation tutor-index {
-	display: none;
-}
 /*==================== NAVIGATION BAR: END =======================*/
 
 /*==================== SIDE NAVIGATION BAR: =======================*/
@@ -102,13 +145,25 @@ nav ul li a:hover {
   background: rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-.menu .avatar #avatar {
+.menu .avatar .circle {
   width: 120px;
-  height: 110px;
+  height: 114px;
   border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #ffea92;
+	display: flex;
+  background-image: linear-gradient(to top left, #4568dc, #b06ab3);
+	margin: auto;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+.menu .avatar #avatar {
+  margin: auto;
+	width: 100%;
+  border-radius: 50%;
+  //border: 5px solid #fff;
+}
+.menu .avatar #session_img_init {
+  margin: auto;
+  color: #fff;
+  font-size: 4.5rem;
 }
 .menu .avatar h2 {
   font-weight: 500;
@@ -181,18 +236,6 @@ nav ul li a:hover {
 
 /*==================== DASHBOARD: =======================*/
 
-/*---------- Decoration for each pages ------------*/
-.page_title {
-  font-family: "Open Sans", Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #190455;
-	text-transform: uppercase;
-	font-size: 2.5rem;
-	text-align: center;
-	font-weight: 430;
-}
-
-/*--------- Decoration for each pages: END ----------*/
-
 /*---------- Page Responsive ------------*/
 @media all and (min-width: 1024px) and (max-width: 1280px) {
   body .row_index{
@@ -210,8 +253,71 @@ nav ul li a:hover {
   }
 }
 /*---------- Page Responsive: END ------------*/
-
 /*==================== DASHBOARD: END =======================*/
+
+/*==================== Session Card: =======================*/
+.session_card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.2s;
+    border-radius: 10px;
+		background: linear-gradient(-40deg, transparent 35%, rgba(255, 255, 255, 1) 35%), url(asset-path('subject/csci.png'));
+}
+.session_card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.session_card_head .circle {
+	width: 131px;
+  height: 126px;
+  border-radius: 50%;
+	display: flex;
+  background-image: linear-gradient(to top left, #3acfd5 0%, #3a4ed5 100%);
+	margin: auto;
+}
+.session_card_head .session_img{
+	margin: auto;
+	width: 90%;
+  border-radius: 50%;
+}
+.session_card_head #session_img_init {
+  margin: auto;
+  color: #fff;
+  font-size: 5.5rem;
+}
+.session_card h3 {
+	color: #484848;
+	font-size: 1.7rem;
+	letter-spacing: 1.3px;
+	font-weight: 400;
+}
+#card_subject {
+	color: #4A4A4A;
+	font-size: 1.2rem;
+	font-weight: 350;
+}
+#card_subject .bold{
+	font-weight: 500;
+}
+.session_card label {
+	color: #666666;
+	font-size: 1.1rem;
+	font-weight: 250;
+	border-bottom: 2.1px solid rgba(0,0,0,.2);
+}
+.session_card #card_question {
+	color: #484848;
+	font-size: 1.1rem;
+}
+.session_card {
+	padding: 35px;
+}
+
+.session_card_head {
+	//background-color: blue;
+	text-align: center;
+}
+
+/*==================== Session Card: END =======================*/
+
 
 /*==================== FOOTER:  =======================*/
 footer {

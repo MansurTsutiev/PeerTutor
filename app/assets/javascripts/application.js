@@ -14,8 +14,8 @@
 //= require_tree .
 
 //**************************** DASHBOARD ***************************
-//responsible for switching views in the dashboard on click
 $(function(){
+  //responsible for switching views in the dashboard on click
   $("a.load").click(function (e) {
     e.preventDefault();
     $("#tutor_view_frame").load($(this).attr("href"));
@@ -24,6 +24,16 @@ $(function(){
   $("a.tu_load").click(function (e) {
     e.preventDefault();
     $("#tutee_view_frame").load($(this).attr("href"));
+  });
+
+  //for side nav bar, child ('button') triggers parent action ('li')
+  $(".menu ul li .btn").click(function (e) {
+    $(this).closest("li").focus();
+  });
+
+  //for side nav bar, parent ('li') triggers child('button')
+  $(".menu ul li").click(function (e) {
+    $(this).find(".btn")[0].click();
   });
 });
 

@@ -9,10 +9,16 @@
 
     <header class="avatar pt-5">
         <%= link_to tutor_index_path do %>
-        <%= image_tag image, :id => "avatar" %>
-        <h2 class="py-4" id="dash_board_user_name"><%= current_user.first_name %></h2>
+        <div class="circle">
+          <% if current_user.avatar.present? %>
+            <%= image_tag current_user.avatar, :id => "avatar"%>
+          <% else %>
+            <h1 id="session_img_init"><%= current_user.first_name[0] %></h1>
+          <% end %>
+        </div>
+        <h2 class="pt-4" id="dash_board_user_name"><%= current_user.first_name %></h2>
         <% end %>
-        <div class="pb-4">
+        <div class="pt-2 pb-4">
           <%= render 'is_live' %>
         </div>
     </header>
@@ -28,7 +34,7 @@
       <li tabindex="0" class="side_nav_bar_row">
         <span>
           <div class="d-inline"><i class="fa fa-search" aria-hidden="true" style="color:white;"></i></div>
-          <div class="d-inline"><%=link_to "Incoming Request", tutor_incoming_requests_path, remote: true, class: "btn", id: "incoming_requests_link"  %></div>
+          <div class="d-inline"><%=link_to "Incoming Request", tutor_incoming_requests_path, remote: true, class: "btn", id: "incoming_requests_link" %></div>
           <div class="d-inline"><mark id="incoming_requests_notify" class=""></mark></div>
         </span>
       </li>
