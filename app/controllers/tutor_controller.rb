@@ -182,7 +182,9 @@ class TutorController < ApplicationController
       tutor_id: current_user.id,
       partial: ApplicationController.render(partial: 'tutee/list_of_tutors', locals: {available_tutors: available_tutors(session), item2: "" })
     )
-    return
+    respond_to do |format|
+      format.js {render 'incoming_requests'}
+    end
   end
 
   private
