@@ -47,9 +47,10 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
     }
     else if (data['command'] == 'session_canceled') {
       alert("Session is canceled.");
-      var value = data['tutee_id'];
-      var a = $('*[data-tutee_id=' + value + "]")[0];
-      a.parentNode.removeChild(a);
+      // var value = data['tutee_id'];
+      // var a = $('*[data-tutee_id=' + value + "]")[0];
+      // a.parentNode.removeChild(a);
+      location.reload();
 
 
       //var row = document.querySelector("[data-tutee_id='" + data['tutee_id'] + "']");    //find and delete the row
