@@ -142,13 +142,33 @@ nav ul li a:hover {
   background: rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-.menu .avatar #avatar {
+// .menu .avatar #avatar {
+//   width: 120px;
+//   height: 110px;
+//   border-radius: 50%;
+//   overflow: hidden;
+//   border: 4px solid #fff;
+//   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+// }
+.menu .avatar .circle {
   width: 120px;
-  height: 110px;
+  height: 114px;
   border-radius: 50%;
-  overflow: hidden;
-  border: 4px solid #ffea92;
+	display: flex;
+  background-image: linear-gradient(to top left, #4568dc, #b06ab3);
+	margin: auto;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+}
+.menu .avatar #avatar {
+  margin: auto;
+	width: 100%;
+  border-radius: 50%;
+  //border: 5px solid #fff;
+}
+.menu .avatar #session_img_init {
+  margin: auto;
+  color: #fff;
+  font-size: 4.5rem;
 }
 .menu .avatar h2 {
   font-weight: 500;

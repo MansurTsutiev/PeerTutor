@@ -9,7 +9,13 @@
 
     <header class="avatar pt-5">
         <%= link_to tutor_index_path do %>
-        <%= image_tag image, :id => "avatar" %>
+        <div class="circle">
+          <% if current_user.avatar.present? %>
+            <%= image_tag current_user.avatar, :id => "avatar"%>
+          <% else %>
+            <h1 id="session_img_init"><%= current_user.first_name[0] %></h1>
+          <% end %>
+        </div>
         <h2 class="py-4" id="dash_board_user_name"><%= current_user.first_name %></h2>
         <% end %>
         <div class="pb-4">
