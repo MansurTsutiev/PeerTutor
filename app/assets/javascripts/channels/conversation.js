@@ -62,6 +62,13 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
     }
     else if (data['command'] == 'session_completed') {
       alert("Session is completed.");
+      $('#frame').replaceWith(data['tips_box']);
+    }
+    else if (data['command'] == 'session_declined')
+    {
+      alert("Tutor declined request!");
+      //display list_of_tutors
+      $('#frame').replaceWith(data['partial']);
     }
 
     var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");

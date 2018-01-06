@@ -25,7 +25,9 @@
         </div>
       </div>
       <%= link_to "Accept", tutor_accept_request_path(session_id: session.id), id: "accept", class: "btn btn-lg btn-block accept_btn", remote: true %>
+      <%= link_to "Decline", tutor_decline_request_path(session_id: session.id), id: "decline", class: "btn btn-lg btn-block cancel_btn", remote: true %>
     </div>
+
   </div>
 </div>
 <% end %>

@@ -1,5 +1,6 @@
 <div id="frame" class="animated bounceInUp">
 <div id="list_of_tutors">
+  <% @available_tutors ||= available_tutors %>
   <% if @available_tutors == nil || @available_tutors.count == 0 %>
       <div class="row">
         <h2 class="head_style pb-5"> Sorry! There is not available tutors. </h2>

@@ -1,31 +1,37 @@
-<% tutoring_sessions.each do |session| %>
-<div class="col col-12 session_card" id="card" style="min-width: 450px;" data-tutee_id=<%= session.user_id %>>
-  <div class="row">
-    <div class="col-4 session_card_head align-self-center">
-      <div class="circle">
-        <% if session.user.avatar.present? %>
-          <%= image_tag session.user.avatar, class: "session_img"%>
-        <% else %>
-          <h1 id="session_img_init"><%= session.user.first_name[0] %></h1>
-        <% end %>
+<% if tutoring_sessions.count == 0 %>
+      <div class="alert alert-info" role="alert">
+        <h4 class="alert-heading"><i class="fa fa-graduation-cap" aria-hidden="true"></i>   There are no accepted requests.</h4>
       </div>
-    </div>
-    <div class="col-8 p-5">
-      <div class="row">
-        <h3><%= session.user.first_name %> <%= session.user.last_name %></h3>
+<% else %>
+  <% tutoring_sessions.each do |session| %>
+  <div class="col col-12 session_card" id="card" style="min-width: 450px;" data-tutee_id=<%= session.user_id %>>
+    <div class="row">
+      <div class="col-4 session_card_head align-self-center">
+        <div class="circle">
+          <% if session.user.avatar.present? %>
+            <%= image_tag session.user.avatar, class: "session_img"%>
+          <% else %>
+            <h1 id="session_img_init"><%= session.user.first_name[0] %></h1>
+          <% end %>
+        </div>
       </div>
-      <div class="py-4">
+      <div class="col-8 p-5">
         <div class="row">
-          <p id="card_subject"><span class="bold"> <%= session.course.subject.abbrev %><%= session.course.number %></span> <%= session.course.name %></p>
+          <h3><%= session.user.first_name %> <%= session.user.last_name %></h3>
         </div>
+        <div class="py-4">
+          <div class="row">
+            <p id="card_subject"><span class="bold"> <%= session.course.subject.abbrev %><%= session.course.number %></span> <%= session.course.name %></p>
+          </div>
 
-        <label>Question</label>
-        <div class="row" id="card_question">
-            <p><%= session.question %></p>
+          <label>Question</label>
+          <div class="row" id="card_question">
+              <p><%= session.question %></p>
+          </div>
         </div>
+        <%= link_to "Complete", tutor_complete_tutoring_session_path(session_id: session.id, user_id: session.user_id), id: "complete", class: "btn btn-lg btn-block complete_btn", remote: true %>
       </div>
-      <%= link_to "Complete", tutor_complete_tutoring_session_path(session_id: session.id, user_id: session.user_id), id: "complete", class: "btn btn-lg btn-block complete_btn", remote: true %>
     </div>
   </div>
-</div>
+  <% end %>
 <% end %>

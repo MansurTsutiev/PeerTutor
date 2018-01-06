@@ -76,6 +76,8 @@ Rails.application.routes.draw do
 
   get 'tutee/temp'
 
+  get 'tutor/decline_request'
+
   devise_for :users,
   controllers: { sessions: 'users/sessions',
     confirmations: 'users/confirmations',
