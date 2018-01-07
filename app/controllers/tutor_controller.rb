@@ -180,7 +180,7 @@ class TutorController < ApplicationController
       "conversations-#{tutee_id}",
       command: "session_declined",
       tutor_id: current_user.id,
-      partial: ApplicationController.render(partial: 'tutee/list_of_tutors', locals: {available_tutors: available_tutors(session), item2: "" })
+      partial: ApplicationController.render(partial: 'tutee/list_of_tutors', locals: {available_tutors: available_tutors(session), tutoring_session: session})
     )
     respond_to do |format|
       format.js {render 'incoming_requests'}
