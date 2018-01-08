@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 20171229234740) do
     t.datetime "updated_at", null: false
     t.boolean "accepted", default: false
     t.index ["course_id"], name: "index_tutoring_sessions_on_course_id"
-    t.index ["tutor_id"], name: "index_tutoring_sessions_on_tutor_id", unique: true
+    t.index ["tutor_id"], name: "index_tutoring_sessions_on_tutor_id"
     t.index ["user_id"], name: "index_tutoring_sessions_on_user_id", unique: true
   end
 
