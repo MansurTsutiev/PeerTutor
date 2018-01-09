@@ -1,6 +1,20 @@
 <div id="frame" class="animated bounceInUp">
-  <div class="container container_box">
-    <h1>Tutor#tutor_profile</h1>
-    <p>Find me in app/views/tutor/tutor_profile.html.erb</p>
+  <div id="tutor_profile">
+    <div class="row justify-content-center">
+      <h1 class="head_style">Profile</h1>
+    </div>
+    <h3 class="text-muted"> Courses Currently Registerd </h3>
+    <div class="row">
+      <div class='col-10'>
+        <ul>
+          <% @tutor_courses.each do |tutor| %>
+            <li><h5> <%=tutor.course.subject.abbrev %> <%= tutor.course.number %> - <%= tutor.course.name %> </h5></li>
+          <% end %>
+        </ul>
+        <%= link_to "Edit", tutor_tutor_profile_edit_path, class: "btn btn-lg btn-block complete_btn", remote: true %>
+
+    </div>
+
+  </div>
   </div>
 </div>

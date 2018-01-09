@@ -88,9 +88,51 @@ class TutorController < ApplicationController
   end
 
   def tutor_profile
+    @tutor_courses = TutorCourse.where(tutor_id: current_user.id)
     respond_to do |format|
       format.js
     end
+  end
+
+  def tutor_profile_edit
+
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def get_courses_tutor_profile
+    # render partial: 'tutor/select_courses_tutor_profile', locals: {subject_id: 1}
+    @tutor_courses = TutorCourse.where(tutor_id: current_user.id)
+    @course_ids = @tutor_courses.map(&:course_id)
+    
+    @courses = Course.where(subject_id: params[:subject_id])
+    render partial: 'select_courses_tutor_profile'
+  end
+
+#-----------------------------------------------#
+# note:
+# using create instead of edit on purpose
+# drop the row for unchecked ones and create row for newly checked ones
+#-----------------------------------------------#
+  def tutor_profile_update
+    @course_ids = params[:course][:id].map(&:to_i)
+    @tutor_courses = TutorCourse.where(tutor_id: current_user.id)
+
+    for tutor_course in @tutor_courses
+      if @course_ids.include? tutor_course.course_id   #true
+        @course_ids.delete(tutor_course.course_id)
+      else #false => delete the row
+        TutorCourse.find(tutor_course.id).destroy
+      end
+    end
+
+    for course_id in @course_ids
+      TutorCourse.create(tutor_id: current_user.id, course_id: course_id)
+    end
+
+    redirect_to tutor_index_path   #want to redirect to tutor_profile!!
+
   end
 
   def piggy_bank

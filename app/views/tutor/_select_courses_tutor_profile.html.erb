@@ -1,0 +1,18 @@
+<%= form_tag(tutor_tutor_profile_update_path, method: :post) do %>
+  <div class="row">
+    <% for course in @courses %>
+    <ul>
+      <li>
+        <% if @course_ids.include? course.id %>
+          <%= check_box_tag 'course[id][]', course.id, checked: 1 %>
+        <% else %>
+          <%= check_box_tag 'course[id][]', course.id %>
+        <% end %>
+        <%= course.id %> <%= course.name %>
+        <br />
+      </li>
+    </ul>
+    <% end %>
+  </div>
+  <%= submit_tag "Update", class: "btn-lg btn-block complete_btn" %>
+<% end %>

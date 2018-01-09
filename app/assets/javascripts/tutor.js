@@ -25,7 +25,6 @@
 
 }).call(this);
 
-
 window.onload = function () {
   //cahnge incoming_requests from green to regular when clicked:
   if (document.querySelector("#incoming_requests_link")) {
@@ -49,4 +48,18 @@ window.onload = function () {
       $bulb.attr('src', 'http://images.clipartpanda.com/light-bulb-png-MiLxq9oyT.png');
     }
   });
+
 }
+
+//======== TUTOR PROFILE =========//
+$(document).on('change', '#subjects_select_tutor_profile', function() {
+  return $.ajax({
+    type: 'GET',
+    url: '/tutor/get_courses_tutor_profile',
+    data: {
+      subject_id: $(this).val()
+    }
+  }).done(function(data) {
+    return $('.course_area_tutor_profile').html(data);
+  });
+});

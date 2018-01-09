@@ -1,0 +1,10 @@
+<div id="frame" class="animated bounceInUp">
+  <h1>Editting Mode</h1>
+  <%= label :tutor_courses, :subject, class:""%>
+  <br />
+  <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select_tutor_profile'} %>
+
+  <div class="course_area_tutor_profile">
+  </div>
+
+</div>
