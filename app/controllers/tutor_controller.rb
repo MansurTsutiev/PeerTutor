@@ -105,7 +105,7 @@ class TutorController < ApplicationController
     # render partial: 'tutor/select_courses_tutor_profile', locals: {subject_id: 1}
     @tutor_courses = TutorCourse.where(tutor_id: current_user.id)
     @course_ids = @tutor_courses.map(&:course_id)
-    
+
     @courses = Course.where(subject_id: params[:subject_id])
     render partial: 'select_courses_tutor_profile'
   end
@@ -131,7 +131,12 @@ class TutorController < ApplicationController
       TutorCourse.create(tutor_id: current_user.id, course_id: course_id)
     end
 
-    redirect_to tutor_index_path   #want to redirect to tutor_profile!!
+    #redirect_to tutor_index_path   #want to redirect to tutor_profile!!
+    #MANSUR CODE
+    respond_to do |format|
+      format.js {render 'tutor_profile'}
+    end
+    #MANSUR CODE end
 
   end
 
