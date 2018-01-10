@@ -12,6 +12,12 @@ Rails.application.routes.draw do
 
   get 'tutor/tutor_profile'
 
+  get 'tutor/tutor_profile_edit'
+
+  get 'tutor/get_courses_tutor_profile'
+
+  post 'tutor/tutor_profile_update'
+
   get 'tutor/piggy_bank'
 
   get 'tutor/messenger'

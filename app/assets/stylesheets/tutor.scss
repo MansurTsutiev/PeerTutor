@@ -140,7 +140,30 @@ input[type='checkbox'] {
 
 /*==================== INCOMING REQUEST: END =======================*/
 
+/*==================== TUTOR PROFILE =======================*/
+#tutor_profile_course_field {
+	//min-height: 470px;
+	max-height: 470px;
+	padding: 10px;
+	border: 2px solid #777;
+	border-radius: 14px;
+	overflow: scroll;
+}
+#tutor_profile_edit label {
+	font-size: 1.3rem;
+}
+#tutor_profile_edit #subjects_select_tutor_profile {
+	width: 100%;
+}
+#tutor_profile_edit_course_field {
+	background: #fff;
+	min-height: 470px;
+	max-height: 470px;
+	padding: 10px;
+	border: 2px solid #777;
+	border-radius: 14px;
+	overflow: scroll;
+}
 
-// img {
-//     border-radius: 5px 5px 0 0;
-// }
+
+/*==================== TUTOR PROFILE: END =======================*/
