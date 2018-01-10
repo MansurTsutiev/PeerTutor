@@ -134,7 +134,7 @@ class TutorController < ApplicationController
     #redirect_to tutor_index_path   #want to redirect to tutor_profile!!
     #MANSUR CODE
     respond_to do |format|
-      format.js {render 'tutor_profile'}
+      format.js {redirect_to '/tutor/tutor_profile'}
     end
     #MANSUR CODE end
 
