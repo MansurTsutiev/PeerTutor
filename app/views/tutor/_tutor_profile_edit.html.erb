@@ -6,9 +6,10 @@
     <div class="col-10" id="tutor_profile_edit">
       <%= label :tutor_courses, :subject, class:""%>
       <br />
-      <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select_tutor_profile'} %>
+      <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:selected => @subject_id}, {:id => 'subjects_select_tutor_profile'} %>
 
       <div class="course_area_tutor_profile">
+        <%= render 'tutor/select_courses_tutor_profile' %>
       </div>
     </div>
   </div>
