@@ -1,20 +1,27 @@
 <div id="frame" class="animated bounceInUp">
   <div id="tutor_profile">
-    <div class="row justify-content-center">
-      <h1 class="head_style">Profile</h1>
+    <div class="row justify-content-center pb-3">
+        <h1 class="page_title">Profile</h1>
     </div>
-    <h3 class="text-muted"> Courses Currently Registerd </h3>
-    <div class="row">
-      <div class='col-10'>
-        <ul>
-          <% @tutor_courses.each do |tutor| %>
-            <li><h5> <%=tutor.course.subject.abbrev %> <%= tutor.course.number %> - <%= tutor.course.name %> </h5></li>
-          <% end %>
-        </ul>
+
+    <div class="row justify-content-center pb-5">
+      <div class="col-10">
+        <h4 class="text-muted"> Courses Currently Registered</h4>
+        <div class="pb-3">
+          <div id="tutor_profile_course_field">
+            <ul>
+              <% @tutor_courses.each do |tutor| %>
+                <li><h5> <%=tutor.course.subject.abbrev %> <%= tutor.course.number %> - <%= tutor.course.name %> </h5></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+
         <%= link_to "Edit", tutor_tutor_profile_edit_path, class: "btn btn-lg btn-block complete_btn", remote: true %>
 
+      </div>
     </div>
 
-  </div>
+
   </div>
 </div>

@@ -1,10 +1,16 @@
 <div id="frame" class="animated bounceInUp">
-  <h1>Editting Mode</h1>
-  <%= label :tutor_courses, :subject, class:""%>
-  <br />
-  <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select_tutor_profile'} %>
+  <div class="row justify-content-center">
+    <h1 class="head_style">Update</h1>
+  </div>
+  <div class="row justify-content-center pb-5">
+    <div class="col-10" id="tutor_profile_edit">
+      <%= label :tutor_courses, :subject, class:""%>
+      <br />
+      <%= collection_select :subject, :id, Subject.all, :id, :abbrev_and_name, {:include_blank => true}, {:id => 'subjects_select_tutor_profile'} %>
 
-  <div class="course_area_tutor_profile">
+      <div class="course_area_tutor_profile">
+      </div>
+    </div>
   </div>
 
 </div>
