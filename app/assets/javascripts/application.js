@@ -33,7 +33,7 @@ $(function(){
 
   //for side nav bar, parent ('li') triggers child('button')
   $(".menu ul li").click(function (e) {
-    $(this).find(".btn")[0].click();
+    //$(this).find(".btn")[0].click();
   });
 });
 
