@@ -4,7 +4,6 @@
       <div class="col-sm-10 col-sm-offset-1">
         <% users ||= @users %>
         <% conversations ||= @conversations %>
-
         <% if users.nil? %>
           <div class="alert alert-info" role="alert">
             <h4 class="alert-heading"><i class="fa fa-comments" aria-hidden="true"></i>   You have no messages.</h4>
@@ -25,7 +24,7 @@
           <div class="">
               <% users.each do |user| %>
               <!-- Workaround: this link is triggered automaticly when this page loads. -->
-                <%= link_to "", conversations_path(user_id: user), remote: true, method: :post, id: "open_chat" %>
+                <%= link_to "#{user.first_name}", conversations_path(user_id: user), remote: true, method: :post, id: "open_chat" %>
               <% end %>
           </div>
         </div>
