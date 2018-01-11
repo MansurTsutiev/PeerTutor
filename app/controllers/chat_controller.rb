@@ -14,7 +14,8 @@ class ChatController < ApplicationController
       user_ids = TutoringSession.where(tutor_id: current_user.id).pluck(:user_id)
       @users = User.find(user_ids)
 
-      @conversations << Conversation.includes(:recipient, :messages).find_by(id: session[:conversations])
+      #@conversations << Conversation.includes(:recipient, :messages).find_by(sender_id: current_user.id)
+      @conversations = Conversation.where(sender_id: current_user.id)
     elsif tutoring_sessions.count == 1
       #tutee
       tutoring_session = tutoring_sessions[0]
