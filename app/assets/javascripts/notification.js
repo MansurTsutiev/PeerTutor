@@ -1,5 +1,14 @@
+//change incoming_requests from green to regular when clicked
+$('nav').on('click', 'ul li#incoming_requests_li', function() {
+  if(document.querySelector('nav #incoming_requests_notify').classList.contains('notify')) {
+    var ir = document.querySelector('nav #incoming_requests_notify');
+    $(ir).removeClass('notify');
+  }
+});
+
+
 //change currently_tutoring to green when tutor clicked accept
-$('.container_box').on('click','#accept', function(){
+$('#incoming_requests').on('click','#accept', function(){
   var a = document.querySelector('#currently_tutoring_notify');
   if (a) {
     $(a).addClass('notify');
@@ -7,7 +16,9 @@ $('.container_box').on('click','#accept', function(){
 });
 
 //change currently_tutoring from green to regular when clicked:
-$('.menu').on('click', '#currently_tutoring_link', function() {
-  var incoming_requests_link = document.querySelector('#currently_tutoring_notify');
-  $(incoming_requests_link).removeClass('notify');
+$('nav').on('click', 'ul li#currently_tutoring_li', function() {
+  if(document.querySelector('nav #currently_tutoring_notify').classList.contains('notify')) {
+  var ct = document.querySelector('#currently_tutoring_notify');
+  $(ct).removeClass('notify');
+  }
 });

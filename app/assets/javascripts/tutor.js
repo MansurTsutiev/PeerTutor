@@ -26,15 +26,6 @@
 }).call(this);
 
 window.onload = function () {
-  //cahnge incoming_requests from green to regular when clicked:
-  if (document.querySelector("#incoming_requests_link")) {
-    document.querySelector("#incoming_requests_link").addEventListener("click", function() {
-      //alert("works");
-      var incoming_requests_link = document.querySelector("#incoming_requests_notify")
-      jQuery(incoming_requests_link).removeClass('notify');
-    });
-
-  }
 
   //turn on the live button
   $bulb = $( "#live_btn" );
