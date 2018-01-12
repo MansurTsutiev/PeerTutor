@@ -1,11 +1,19 @@
+<style media="screen">
+  .chat_box {
+    border: 2px solid white;
+    background: rgba(77, 141, 219, 0.84);
+    min-width: 500px;
+  }
+
+</style>
 <li>
   <div class="panel panel-default" data-conversation-id="<%= conversation.id %>">
     <div class="panel-heading">
-      <%= link_to conversation.opposed_user(user).first_name, '', class: 'toggle-window' %>
+      <h3><%= conversation.opposed_user(user).first_name%></h3>
       <!-- <%= link_to "x", close_conversation_path(conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %> -->
     </div>
 
-    <div class="panel-body" style="">
+    <div class="panel-body session_card chat_box" style="">
       <div class="messages-list">
         <ul>
           <%= render 'conversations/conversation_content', messages: conversation.messages, user: user %>
@@ -15,7 +23,7 @@
         <input name="conversation_id" type="hidden" value="<%= conversation.id %>">
         <input name="user_id" type="hidden" value="<%= user.id %>">
         <textarea name="body" class="form-control"></textarea>
-        <input type="submit" class="btn btn-success" value="Send">
+        <input type="submit" class="btn accept_btn" value="Send">
       </form>
     </div>
   </div>
