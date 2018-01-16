@@ -6,4 +6,4 @@ It's a Single Page Application that allows college students to provide free tuto
 ![Alt text](land.png?raw=true "Optional Title")
 
 
-[Go To The Website](http://54.147.235.220:3000)
+[Go To The Website](http://54.147.235.220)
