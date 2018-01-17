@@ -13,76 +13,43 @@
             <h4 class="alert-heading"><i class="fa fa-comments" aria-hidden="true"></i>   You have no messages.</h4>
           </div>
         <% else %>
-        <div class="row">
 
-          <div class="">
-            <ul id="conversations-list">
-              <% if conversations[0] != nil %>
-                <% conversations.each do |conversation| %>
-                  <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
-                <% end %>
-              <% end %>
-            </ul>
-          </div>
-
-          <div class="">
-              <% users.each do |user| %>
-              <!-- Workaround: this link is triggered automaticly when this page loads. -->
-                <%= link_to "#{user.first_name}", conversations_path(user_id: user), remote: true, method: :post, id: "open_chat" %>
-              <% end %>
-          </div>
-        </div>
-        <div class="row">
+  
           <!-- NEW CODE: -->
 
 
-<div class="contacts_frame">
-<div id="sidepanel">
-<div id="profile">
-  <div class="wrap">
-    <img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt="" />
-    <p>Mike Ross</p>
-    <i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
-    <div id="status-options">
-      <ul>
-        <li id="status-online" class="active"><span class="status-circle"></span> <p>Online</p></li>
-        <li id="status-away"><span class="status-circle"></span> <p>Away</p></li>
-        <li id="status-busy"><span class="status-circle"></span> <p>Busy</p></li>
-        <li id="status-offline"><span class="status-circle"></span> <p>Offline</p></li>
-      </ul>
-    </div>
+            <div class="contacts_frame">
+            <div id="sidepanel">
 
-  </div>
-</div>
-<div id="search">
-  <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
-  <input type="text" placeholder="Search contacts..." />
-</div>
-<div id="contacts">
-  <ul>
-        <% users.each do |user| %>
-        <!-- Workaround: this link is triggered automaticly when this page loads. -->
+            <div id="search">
+              <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
+              <input type="text" placeholder="Search contacts..." />
+            </div>
+            <div id="contacts">
+              <ul>
+                    <% users.each do |user| %>
+                    <!-- Workaround: this link is triggered automaticly when this page loads. -->
 
 
-    <li class="contact">
-      <div class="wrap">
-        <span class="contact-status online"></span>
-        <%= image_tag "avatar.png" %>
-        <div class="meta">
-          <p class="name"><%= link_to "#{user.first_name}", conversations_path(user_id: user),class: "white", remote: true, method: :post, id: "open_chat" %></p>
-          <p class="preview">Preview...</p>
-        </div>
-      </div>
-    </li>
-    <% end %>
-  </ul>
-</div>
-<div id="bottom-bar">
-  <button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span>Add contact</span></button>
-  <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> <span>Settings</span></button>
-</div>
-</div>
-</div>
+                <li class="contact">
+                  <div class="wrap">
+                    <span class="contact-status online"></span>
+                    <%= image_tag "avatar.png" %>
+                    <div class="meta">
+                      <p class="name"><%= link_to "#{user.first_name}", conversations_path(user_id: user),class: "white", remote: true, method: :post, id: "open_chat" %></p>
+                      <p class="preview">Preview...</p>
+                    </div>
+                  </div>
+                </li>
+                <% end %>
+              </ul>
+            </div>
+            <div id="bottom-bar">
+              <button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span>Add contact</span></button>
+              <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> <span>Settings</span></button>
+            </div>
+            </div>
+            </div>
 
 
           <!-- NEW CODE: END-->

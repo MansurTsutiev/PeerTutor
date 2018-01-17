@@ -67,9 +67,10 @@ $break-big: 900px;
 
 	#sidepanel {
 		float: left;
-		min-width: 280px;
+    border-radius: 4px;
+		min-width: 320px;
 		max-width: 340px;
-		width: 40%;
+		width: 400px;
 		height: 100%;
 		background: $dark;
 		color: $white;
@@ -389,7 +390,8 @@ $break-big: 900px;
 		}
 
 		#contacts {
-			height: calc(100% - 177px);
+			height: 400px;
+
 			overflow-y: scroll;
 			overflow-x: hidden;
 			@media screen and (max-width: $break) {
