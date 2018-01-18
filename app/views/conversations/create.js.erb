@@ -1,4 +1,4 @@
-
+$('#frame').replaceWith('<%= j render 'conversations/conversation' %>');
 //find an existing conversation window in the ‘#conversations-list’ div.
 var conversations = $('#conversations-list');
 var conversation = conversations.find("[data-conversation-id='" + "<%= @conversation.id %>" + "']");

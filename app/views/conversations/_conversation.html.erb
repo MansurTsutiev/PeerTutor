@@ -6,25 +6,30 @@
   }
 
 </style>
-<li>
-  <div class="panel panel-default" data-conversation-id="<%= conversation.id %>">
-    <div class="panel-heading">
-      <h3><%= conversation.opposed_user(user).first_name%></h3>
-      <!-- <%= link_to "x", close_conversation_path(conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %> -->
+<% @conversation ||= conversation  %>
+<% user ||= current_user %>
+
+<div id="frame">
+    <%= link_to "Go Back", chat_index_path, class: "btn", remote: true %>
+    <div class="panel panel-default" data-conversation-id="<%= @conversation.id %>">
+      <div class="panel-heading">
+        <h3><%= @conversation.opposed_user(current_user).first_name%></h3>
+        <!-- <%= link_to "x", close_conversation_path(@conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %> -->
+      </div>
+
+      <div class="panel-body session_card chat_box" style="">
+        <div class="messages-list" id="messages_list">
+          <ul>
+            <%= render 'conversations/conversation_content', messages: @conversation.messages, user: user %>
+          </ul>
+        </div>
+        <form class="new_message">
+          <input name="conversation_id" type="hidden" value="<%= @conversation.id %>">
+          <input name="user_id" type="hidden" value="<%= user.id %>">
+          <textarea name="body" class="form-control"></textarea>
+          <input type="submit" class="btn accept_btn" value="Send">
+        </form>
+      </div>
     </div>
 
-    <div class="panel-body session_card chat_box" style="">
-      <div class="messages-list">
-        <ul>
-          <%= render 'conversations/conversation_content', messages: conversation.messages, user: user %>
-        </ul>
-      </div>
-      <form class="new_message">
-        <input name="conversation_id" type="hidden" value="<%= conversation.id %>">
-        <input name="user_id" type="hidden" value="<%= user.id %>">
-        <textarea name="body" class="form-control"></textarea>
-        <input type="submit" class="btn accept_btn" value="Send">
-      </form>
-    </div>
-  </div>
-</li>
+</div>

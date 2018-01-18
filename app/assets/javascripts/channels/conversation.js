@@ -69,40 +69,15 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       alert("Tutor declined request!");
       //display list_of_tutors
       $('#frame').replaceWith(data['partial']);
+    } else if (data['command'] == 'new_message')
+    {
+      //alert("New Message");
+      var conversation = document.querySelector("#messages_list");
+          //alert(data['message']);
+      // check if under the data[‘window’] we pass a partial.
+          conversation.innerHTML += (data['message']);
     }
 
-    var conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");
-
-    // check if under the data[‘window’] we pass a partial.
-    if (data['window'] !== undefined) {
-      var conversation_visible = conversation.is(':visible');
-
-      //check if a conversation’s window is visible
-      if (conversation_visible) {
-        var messages_visible = (conversation).find('.panel-body').is(':visible');
-
-        if (!messages_visible) {
-          //mark that we got a new message by marking a window as green
-          conversation.removeClass('panel-default').addClass('panel-success');
-        }
-        //append a message partial to the window
-        conversation.find('.messages-list').find('ul').append(data['message']);
-      }
-      else {      //just append a message partial
-        $('#conversations-list').append(data['window']);
-        conversation = $('#conversations-list').find("[data-conversation-id='" + data['conversation_id'] + "']");
-        conversation.find('.panel-body').toggle();
-      }
-    }
-    else {
-      conversation.find('ul').append(data['message']);
-    }
-
-    //*********** FIX_ME ***********
-    //var messages_list = conversation.find('.messages-list');
-    //var height = messages_list[0].scrollHeight;
-    //messages_list.scrollTop(height);
-    //*********** FIX_ME end ***********
   },
   speak: function(message) {
     return this.perform('speak', {

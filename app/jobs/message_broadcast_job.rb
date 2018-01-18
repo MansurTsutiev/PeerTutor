@@ -16,6 +16,7 @@ class MessageBroadcastJob < ApplicationJob
   def broadcast_to_sender(user, message)
     ActionCable.server.broadcast(
       "conversations-#{user.id}",
+      command: 'new_message',
       message: render_message(message, user),
       conversation_id: message.conversation_id
     )
@@ -24,6 +25,7 @@ class MessageBroadcastJob < ApplicationJob
   def broadcast_to_recipient(user, message)
     ActionCable.server.broadcast(
       "conversations-#{user.id}",
+      command: 'new_message',
       window: render_window(message.conversation, user),
       message: render_message(message, user),
       conversation_id: message.conversation_id
