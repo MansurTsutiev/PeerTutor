@@ -13,7 +13,7 @@
     <%= link_to "Go Back", chat_index_path, class: "btn", remote: true %>
     <div class="panel panel-default" data-conversation-id="<%= @conversation.id %>">
       <div class="panel-heading">
-        <h3><%= @conversation.opposed_user(current_user).first_name%></h3>
+        <h3><%= @conversation.opposed_user(user).first_name%></h3>
         <!-- <%= link_to "x", close_conversation_path(@conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %> -->
       </div>
 
