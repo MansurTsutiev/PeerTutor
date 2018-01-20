@@ -13,8 +13,7 @@ class ChatController < ApplicationController
 
       user_ids = TutoringSession.where(tutor_id: current_user.id).pluck(:user_id)
 
-      #@users = User.find(user_ids)
-      @users = User.all#delete
+      @users = User.find(user_ids)
 
       #@conversations << Conversation.includes(:recipient, :messages).find_by(sender_id: current_user.id)
       @conversations = Conversation.where(sender_id: current_user.id)
@@ -28,7 +27,6 @@ class ChatController < ApplicationController
         #joins these 3 tables and returns rows with Conversation ids (array of id's) specified
         @conversations << Conversation.includes(:recipient, :messages)
                                      .find_by(id: session[:conversations])
-        @users = User.all#delete
 
       end
     end

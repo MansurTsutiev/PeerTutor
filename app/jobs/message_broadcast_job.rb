@@ -5,10 +5,8 @@ class MessageBroadcastJob < ApplicationJob
   def perform(message)
     sender = message.user
     recipient = message.conversation.opposed_user(sender)
-    puts "************"
-    puts "#{recipient.id}"
-    puts "************"
     #connect with specified channel and send a conversation_id and a HTML code using a partial
+    
     broadcast_to_sender(sender, message)
     broadcast_to_recipient(recipient, message)
   end

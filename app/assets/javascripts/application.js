@@ -67,8 +67,8 @@ function enable_selected(selected_tab, option_amt) {
     panel.attr('class', 'panel panel-default');
 
     if (panel.find('.panel-body').is(':visible')) {
-      var height = messages_list[0].scrollHeight;
-      messages_list.scrollTop(height);
+      //var height = messages_list[0].scrollHeight;
+      //messages_list.scrollTop(height);
     }
   });
 })();
