@@ -1,7 +1,7 @@
 <style media="screen">
   .chat_box {
     border: 2px solid white;
-    background: rgba(77, 141, 219, 0.84);
+    background: #2c3e50;
     min-width: 500px;
   }
 
@@ -9,10 +9,11 @@
 <% @conversation ||= conversation  %>
 <% user ||= current_user %>
 
-<div id="frame">
-    <%= link_to "Go Back", chat_index_path, class: "btn", remote: true %>
+<div id="frame" class="animated bounceInUp">
+    <%= link_to "Back", chat_index_path, class: "btn_back", remote: true %>
     <div class="panel panel-default" data-conversation-id="<%= @conversation.id %>">
       <div class="panel-heading">
+        <br>
         <h3><%= @conversation.opposed_user(user).first_name%></h3>
         <!-- <%= link_to "x", close_conversation_path(@conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %> -->
       </div>
@@ -27,7 +28,8 @@
           <input name="conversation_id" type="hidden" value="<%= @conversation.id %>">
           <input name="user_id" type="hidden" value="<%= user.id %>">
           <textarea name="body" class="form-control"></textarea>
-          <input type="submit" class="btn accept_btn" value="Send">
+          <br>
+           <input type="submit" class="send" value="Send">
         </form>
       </div>
     </div>
