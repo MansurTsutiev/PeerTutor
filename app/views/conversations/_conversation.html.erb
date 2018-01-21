@@ -1,11 +1,3 @@
-<style media="screen">
-  .chat_box {
-    border: 2px solid white;
-    background: #2c3e50;
-    min-width: 500px;
-  }
-
-</style>
 <% @conversation ||= conversation  %>
 <% user ||= current_user %>
 
@@ -18,7 +10,7 @@
         <!-- <%= link_to "x", close_conversation_path(@conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %> -->
       </div>
 
-      <div class="panel-body session_card chat_box" style="">
+      <div class="panel-body chat_box" style="">
         <div class="messages-list" id="messages_list">
           <ul>
             <%= render 'conversations/conversation_content', messages: @conversation.messages, user: user %>
