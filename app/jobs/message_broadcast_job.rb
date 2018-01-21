@@ -6,7 +6,7 @@ class MessageBroadcastJob < ApplicationJob
     sender = message.user
     recipient = message.conversation.opposed_user(sender)
     #connect with specified channel and send a conversation_id and a HTML code using a partial
-    
+
     broadcast_to_sender(sender, message)
     broadcast_to_recipient(recipient, message)
   end
@@ -26,7 +26,6 @@ class MessageBroadcastJob < ApplicationJob
     ActionCable.server.broadcast(
       "conversations-#{user.id}",
       command: 'new_message',
-      window: render_window(message.conversation, user),
       message: render_message(message, user),
       conversation_id: message.conversation_id
     )
