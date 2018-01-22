@@ -78,6 +78,7 @@ class TuteeController < ApplicationController
     else
       @tutor = User.find(params[:tutor_id])
       TutoringSession.where(user_id: current_user.id).last.destroy!
+      Conversation.where(recipient_id: current_user.id, sender_id: @tutor.id).or(Conversation.where(recipient_id: @tutor.id, sender_id: current_user.id)).last.destroy
       ActionCable.server.broadcast(
         "conversations-#{@tutor.id}",
         command: "session_canceled",

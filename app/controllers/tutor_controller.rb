@@ -68,6 +68,7 @@ class TutorController < ApplicationController
   def complete_tutoring_session
     @tutee = User.find(params[:user_id])
     @session_id = params[:session_id]
+    Conversation.where(recipient_id: current_user.id, sender_id: @tutee.id).or(Conversation.where(recipient_id: @tutee.id, sender_id: current_user.id)).last.destroy
     TutoringSession.where(id: @session_id).last.destroy!
     ActionCable.server.broadcast(
       "conversations-#{@tutee.id}",

@@ -1,36 +1,68 @@
 <div id="frame" class="animated bounceInUp">
   <div class="container">
+
+
+
     <div id="inside_messenger">
       <div class="col-sm-10 col-sm-offset-1">
         <% users ||= @users %>
         <% conversations ||= @conversations %>
-
         <% if users.nil? %>
           <div class="alert alert-info" role="alert">
             <h4 class="alert-heading"><i class="fa fa-comments" aria-hidden="true"></i>   You have no messages.</h4>
           </div>
         <% else %>
-        <div class="row">
 
-          <div class="">
-            <ul id="conversations-list">
-              <% if conversations[0] != nil %>
-                <% conversations.each do |conversation| %>
-                  <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
+
+          <!-- NEW CODE: -->
+
+
+            <div class="contacts_frame">
+            <div id="sidepanel">
+
+            <div id="search">
+              <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
+              <input type="text" placeholder="Search contacts..." />
+            </div>
+            <div id="contacts">
+              <ul>
+                    <% users.each do |user| %>
+                    <!-- Workaround: this link is triggered automaticly when this page loads. -->
+
+
+                <li class="contact">
+                  <div class="wrap">
+                    <span class="contact-status online"></span>
+                    <%= image_tag "avatar.png" %>
+                    <div class="meta">
+                      <p class="name"><%= link_to "#{user.first_name}", conversations_path(user_id: user),class: "white", remote: true, method: :post, id: "open_chat" %></p>
+                      <p class="preview">Preview...</p>
+                    </div>
+                  </div>
+                </li>
                 <% end %>
-              <% end %>
-            </ul>
-          </div>
+              </ul>
+            </div>
+            <div id="bottom-bar">
+              <button id="addcontact"><i class="fa fa-user-plus fa-fw" aria-hidden="true"></i> <span>Add contact</span></button>
+              <button id="settings"><i class="fa fa-cog fa-fw" aria-hidden="true"></i> <span>Settings</span></button>
+            </div>
+            </div>
+            </div>
 
-          <div class="">
-              <% users.each do |user| %>
-              <!-- Workaround: this link is triggered automaticly when this page loads. -->
-                <%= link_to "", conversations_path(user_id: user), remote: true, method: :post, id: "open_chat" %>
-              <% end %>
-          </div>
+
+          <!-- NEW CODE: END-->
+
         </div>
         <% end %>
       </div>
     </div>
+
+
+
+
+
+
+
   </div>
 </div>

@@ -1,7 +1,5 @@
-<li>
-  <div class="row">
-    <div class="<%= user.id == message.user_id ? 'message-sent' : 'message-received' %>">
+<div class="row">
+    <div class="<%= user.id == message.user_id ? 'message-sent offset-md-8' : 'message-received offset-md-4'%>">
       <%= message.body %>
     </div>
-  </div>
-</li>
+</div>

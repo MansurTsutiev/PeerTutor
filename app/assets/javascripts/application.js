@@ -33,7 +33,7 @@ $(function(){
 
   //for side nav bar, parent ('li') triggers child('button')
   $(".menu ul li").click(function (e) {
-    $(this).find(".btn")[0].click();
+    //$(this).find(".btn")[0].click();
   });
 });
 
@@ -59,8 +59,8 @@ $(document).ready(function(){
     panel.attr('class', 'panel panel-default');
 
     if (panel.find('.panel-body').is(':visible')) {
-      var height = messages_list[0].scrollHeight;
-      messages_list.scrollTop(height);
+      //var height = messages_list[0].scrollHeight;
+      //messages_list.scrollTop(height);
     }
   });
 })();

@@ -1,8 +1,8 @@
 class CreateConversations < ActiveRecord::Migration[5.1]
   def change
     create_table :conversations do |t|
-      t.references :recipient, index: { unique: true }, foreign_key: { to_table: :users }
-      t.references :sender, index: { unique: true }, foreign_key: { to_table: :users}
+      t.references :recipient, index: { unique: false }, foreign_key: { to_table: :users }
+      t.references :sender, index: { unique: false }, foreign_key: { to_table: :users}
 
       t.timestamps
     end

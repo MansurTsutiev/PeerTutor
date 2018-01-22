@@ -1,4 +1,4 @@
-
+$('#frame').replaceWith('<%= j render 'conversations/conversation' %>');
 //find an existing conversation window in the ‘#conversations-list’ div.
 var conversations = $('#conversations-list');
 var conversation = conversations.find("[data-conversation-id='" + "<%= @conversation.id %>" + "']");
@@ -16,5 +16,5 @@ conversation.find('.panel-body').show();
 
 //check the height of the window and scroll to the bottom of it
 var messages_list = conversation.find('.messages-list');
-var height = messages_list[0].scrollHeight;
-messages_list.scrollTop(height);
+//var height = messages_list[0].scrollHeight;
+//messages_list.scrollTop(height);
