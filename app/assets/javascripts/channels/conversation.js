@@ -24,17 +24,12 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
     else if (data['command'] == 'tutor_accepted') {
 
       if (document.querySelector('#waiting_for_tutor')) {
-        //var outer_frame = document.querySelector('#outer_frame');
-        //var frame = document.querySelector('#frame');
-        //frame.remove();
-        //outer_frame.innerHTML = data['being_tutored'];
-
         $link = $('#messenger_link:first');
         $link[0].click();
         //add Location:
         var f = document.querySelector("#frame");
-        //f.insertAdjacentHTML('beforebegin', data['tutor_response']);
-      } else if (document.querySelector('#inside_messenger')) {
+      }
+      else if (document.querySelector('#inside_messenger')) {
         alert("Session is accepted!");
         $link = $('#messenger_link:first');
         $link[0].click();
@@ -47,17 +42,8 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
     }
     else if (data['command'] == 'session_canceled') {
       alert("Session is canceled.");
-      // var value = data['tutee_id'];
-      // var a = $('*[data-tutee_id=' + value + "]")[0];
-      // a.parentNode.removeChild(a);
       location.reload();
 
-
-      //var row = document.querySelector("[data-tutee_id='" + data['tutee_id'] + "']");    //find and delete the row
-      //var table = document.querySelector('#table');
-      //if (table != null && table.contains(row)) { row.parentNode.removeChild(row); }
-
-      // ??Refresh incoming_requests??
 
     }
     else if (data['command'] == 'session_completed') {
@@ -71,10 +57,7 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       $('#frame').replaceWith(data['partial']);
     } else if (data['command'] == 'new_message')
     {
-      //alert("New Message");
       var conversation = document.querySelector("#messages_list");
-          //alert(data['message']);
-      // check if under the data[‘window’] we pass a partial.
           conversation.innerHTML += (data['message']);
     }
 

@@ -66,3 +66,9 @@ $(document).ready(function(){
 })();
 
 //**************************** CHAT APP end ****************************
+
+window.onbeforeunload = function(e) {
+  var dialogText = 'Dialog text here';
+  e.returnValue = dialogText;
+  return dialogText;
+};
