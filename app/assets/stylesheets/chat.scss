@@ -34,6 +34,14 @@ ul {
   padding: 10px;
   float: left;
 }
+.open_chat {
+  color: #607993;
+  font-weight: bold;
+}
+.open_chat:hover {
+  color: #a2c3e5;
+}
+
 $white: #f5f5f5;
 $dark: #2c3e50;
 $lighter: #32465a;
