@@ -361,15 +361,19 @@ div.message.right .corner{
 #sendmessage input{
 	//border
 }
-#sendmessage input{
+.input{
 	background:#fff;
-	margin:21px 0 0 21px;
-	border:none;
-	padding:0;
+  border:1px solid #8794A1;
+	border-left: 4px solid #8794A1;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+	padding:20px;
 	font-size:14px;
 	font-family:"Open Sans", sans-serif;
 	font-weight:400px;
-	color:#aab8c2;
+	color:#8794A1;
+  outline: none;
 }
 #sendmessage input:focus{
 	 outline: 0;

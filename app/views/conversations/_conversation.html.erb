@@ -3,11 +3,12 @@
 
 <div id="frame" class="animated bounceInUp">
     <%= link_to "Back", chat_index_path, class: "btn_back", remote: true %>
+
+    <!--
     <div class="panel panel-default" data-conversation-id="<%= @conversation.id %>">
       <div class="panel-heading">
         <br>
         <h3><%= @conversation.opposed_user(user).first_name%></h3>
-        <!-- <%= link_to "x", close_conversation_path(@conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %> -->
       </div>
 
       <div class="panel-body chat_box" style="">
@@ -25,43 +26,41 @@
         </form>
       </div>
     </div>
+  -->
 
 
 
     <!-- NEW CODE -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-
 <div id="chatbox">
     <div id="chatview" class="p1">
         <div id="profile">
 
-            <div id="close">
-                <div class="cy"></div>
-                <div class="cx"></div>
-            </div>
-
-            <p>Miro Badev</p>
-            <span>miro@badev@gmail.com</span>
+            <h3><%= @conversation.opposed_user(user).first_name%></h3>
+            <span><%= @conversation.opposed_user(user).email %></span>
         </div>
         <div id="chat-messages">
         	<label>Thursday 02</label>
 
           <%= render 'conversations/conversation_content', messages: @conversation.messages, user: user %>
-
+          <form class="new_message">
+            <input name="conversation_id" type="hidden" value="<%= @conversation.id %>">
+            <input name="user_id" type="hidden" value="<%= user.id %>">
+            <textarea name="body" class=" input"></textarea>
+            <br>
+             <input type="submit" class="send" value="Send">
+          </form>
         </div>
 
-        <div id="sendmessage">
-        	<input type="text" value="Send message..." />
-            <button id="send"></button>
-        </div>
 
-        <form class="new_message">
+
+        <!--
+        <form id="sendmessage" class="new_message">
           <input name="conversation_id" type="hidden" value="<%= @conversation.id %>">
           <input name="user_id" type="hidden" value="<%= user.id %>">
-          <textarea name="body" class="form-control"></textarea>
-          <br>
-           <input type="submit" class="send" value="Send">
-        </form>
+        	<input type="text" value="Send message..." />
+            <input type="submit" class="send" value="Send">
+        </form>-->
+
 
 
 
