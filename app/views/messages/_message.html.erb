@@ -1,5 +1,8 @@
-<div class="row">
-    <div class="<%= user.id == message.user_id ? 'message-sent offset-md-8' : 'message-received offset-md-4'%>">
+<div class="<%= user.id == message.user_id ? 'message' : 'message right' %>">
+    <%= image_tag "avatar" %>
+    <div class="bubble">
       <%= message.body %>
+      <div class="corner"></div>
+      <span>1 min</span>
     </div>
 </div>
