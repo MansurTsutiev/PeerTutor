@@ -58,12 +58,6 @@ class TuteeController < ApplicationController
   def create
     TutoringSession.create(tutoring_session_params)
 
-    # @tutoring_session = TutoringSession.new
-    # @tutoring_session.course = Course.find(params[:course][:id])
-    # @tutoring_session.question = params[:tutoring_session][:question]
-    # @tutoring_session.user = User.find(current_user.id)
-    # @tutoring_session.save()
-
     @tutoring_session = TutoringSession.where(user_id: current_user.id).last
     available_tutors(@tutoring_session.course_id)
     respond_to do |format|

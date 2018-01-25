@@ -14,7 +14,7 @@
         <% else %>
 
 
-          <!-- NEW CODE: -->
+
 
 
             <div class="contacts_frame">
@@ -51,7 +51,51 @@
             </div>
 
 
-          <!-- NEW CODE: END-->
+          <!-- NEW CODE: -->
+          <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+<a id="view-code" href="https://codepen.io/virgilpana/pen/ZYZXgP" target="_blank">VIEW CODE</a>
+
+<div id="chatbox">
+	<div id="friendslist">
+    	<div id="topmenu">
+        	<span class="friends"></span>
+            <span class="chats"></span>
+            <span class="history"></span>
+        </div>
+
+        <div id="friends">
+          <% users.each do |user| %>
+        	<div class="friend">
+            	<%= image_tag "avatar" %>
+                <p>
+                	<strong><%= "#{user.first_name} - #{user.last_name}" %></strong>
+	                <span><%= user.email %></span>
+                </p>
+                <div class="status available"></div>
+            </div>
+          <% end %>
+
+
+            <div id="search">
+	            <input type="text" id="searchfield" value="Search contacts..." />
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+          <!-- NEW CODE end -->
+
+
+
+
+
+
 
         </div>
         <% end %>
