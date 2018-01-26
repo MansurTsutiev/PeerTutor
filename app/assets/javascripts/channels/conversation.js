@@ -44,7 +44,7 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       //display list_of_tutors
       $('#frame').replaceWith(data['partial']);
     } else if (data['command'] == 'new_message') {
-      var conversation = document.querySelector("#messages_list");
+      var conversation = document.querySelector('#chat-messages');
       conversation.innerHTML += (data['message']);
     }
 
