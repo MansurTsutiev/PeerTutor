@@ -2,7 +2,6 @@
 <% user ||= current_user %>
 
 <div id="frame" class="animated bounceInUp">
-    <%= link_to "Back", chat_index_path, class: "btn_back", remote: true %>
 
     <!--
     <div class="panel panel-default" data-conversation-id="<%= @conversation.id %>">
@@ -32,16 +31,22 @@
 
     <!-- NEW CODE -->
 <div id="chatbox">
+  <%= link_to chat_index_path, class: "btn_back", remote: true  do%>
+      <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+  <% end %>
     <div id="chatview" class="p1">
         <div id="profile">
 
             <h3><%= @conversation.opposed_user(user).first_name%></h3>
             <span><%= @conversation.opposed_user(user).email %></span>
         </div>
-        <div id="chat-messages">
-        	<label>Thursday 02</label>
+        <div class="chat_container">
+          <div id="chat-messages">
+          	<label>Thursday 02</label>
 
-          <%= render 'conversations/conversation_content', messages: @conversation.messages, user: user %>
+            <%= render 'conversations/conversation_content', messages: @conversation.messages, user: user %>
+
+          </div>
           <form class="new_message">
             <input name="conversation_id" type="hidden" value="<%= @conversation.id %>">
             <input name="user_id" type="hidden" value="<%= user.id %>">
@@ -50,6 +55,7 @@
              <input type="submit" class="send" value="Send">
           </form>
         </div>
+
 
 
 
