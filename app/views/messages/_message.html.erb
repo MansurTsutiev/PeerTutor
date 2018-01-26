@@ -3,6 +3,6 @@
     <div class="bubble">
       <%= message.body %>
       <div class="corner"></div>
-      <span>1 min</span>
+      <span><%=  message.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%H:%M")%></span>
     </div>
 </div>
