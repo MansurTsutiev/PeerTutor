@@ -44,8 +44,12 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
       //display list_of_tutors
       $('#frame').replaceWith(data['partial']);
     } else if (data['command'] == 'new_message') {
-      var conversation = document.querySelector('#chat-messages');
-      conversation.innerHTML += (data['message']);
+      if (document.querySelector('#chat-messages')) {
+        var conversation = document.querySelector('#chat-messages');
+        conversation.innerHTML += (data['message']);
+        var chat_messages = document.querySelector('#chat-messages');
+        chat_messages.scrollTop = chat_messages.scrollHeight;
+      }
     }
 
   },
