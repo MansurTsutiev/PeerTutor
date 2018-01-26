@@ -1,57 +1,42 @@
 <div id="frame" class="animated bounceInUp">
-    <div id="inside_messenger">
-        <% users ||= @users %>
-          <% conversations ||= @conversations %>
-            <% if users.nil? %>
-              <div class="alert alert-info" role="alert">
-                <h4 class="alert-heading">
-                  <i class="fa fa-comments" aria-hidden="true"></i>
-                  You have no messages.</h4>
+  <div id="inside_messenger">
+    <% users ||= @users %>
+      <% conversations ||= @conversations %>
+        <% if users.nil? %>
+          <div class="alert alert-info" role="alert">
+            <h4 class="alert-heading">
+              <i class="fa fa-comments" aria-hidden="true"></i>
+              You have no messages.</h4>
+          </div>
+        <% else %>
+          <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+          <div id="chatbox">
+            <div id="friendslist">
+              <div id="topmenu">
+                <span class="friends"></span>
+                <span class="chats"></span>
+                <span class="history"></span>
               </div>
-            <% else %>
-              <!-- NEW CODE: -->
-              <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+              <div id="friends">
+                <% users.each do |user| %>
+                  <div class="friend">
+                    <%= image_tag "avatar" %>
+                    <p>
+                      <strong>
+                        <%= link_to "#{user.first_name} #{user.last_name}", conversations_path(user_id: user),class: "open_chat", remote: true, method: :post, id: "open_chat" %>
+                      </strong>
+                      <span><br><%= user.email %></span>
+                    </p>
 
-              <div id="chatbox">
-                <div id="friendslist">
-                  <div id="topmenu">
-                    <span class="friends"></span>
-                    <span class="chats"></span>
-                    <span class="history"></span>
+                    <div class="status available"></div>
                   </div>
-
-                  <div id="friends">
-                    <% users.each do |user| %>
-                      <div class="friend">
-                        <%= image_tag "avatar" %>
-                        <p>
-                          <strong>
-                          <%= link_to "#{user.first_name} #{user.last_name}", conversations_path(user_id: user),class: "open_chat", remote: true, method: :post, id: "open_chat" %>
-                          </strong>
-                          <span><br><%= user.email %></span>
-                        </p>
-
-
-                        <div class="status available"></div>
-                      </div>
-                    <% end %>
-
-                    <div id="search">
-                      <input type="text" id="searchfield" value="Search contacts..."/>
-                    </div>
-
-                  </div>
-
+                <% end %>
+                <div id="search">
+                  <input type="text" id="searchfield" value="Search contacts..."/>
                 </div>
-
               </div>
-
-              <!-- NEW CODE end -->
-
-
-
-              <!-- NEWER CODE end -->
-
-          <% end %>
-        </div>
-    </div>
+            </div>
+          </div>
+        <% end %>
+  </div>
+</div>
