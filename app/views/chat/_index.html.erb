@@ -9,7 +9,6 @@
               You have no messages.</h4>
           </div>
         <% else %>
-          <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
           <div id="chatbox">
             <div id="friendslist">
               <div id="topmenu">
@@ -21,7 +20,7 @@
                 <% users.each do |user| %>
                   <div class="friend">
                     <%= image_tag "avatar" %>
-                    <p>
+                    <p style="font-size: 15px;">
                       <strong>
                         <%= link_to "#{user.first_name} #{user.last_name}", conversations_path(user_id: user),class: "open_chat", remote: true, method: :post, id: "open_chat" %>
                       </strong>
