@@ -110,7 +110,6 @@ class TutorController < ApplicationController
   end
 
   def get_courses_tutor_profile
-    # render partial: 'tutor/select_courses_tutor_profile', locals: {subject_id: 1}
     @tutor_courses = TutorCourse.where(tutor_id: current_user.id)
     @course_ids = @tutor_courses.map(&:course_id)
 
@@ -173,13 +172,6 @@ class TutorController < ApplicationController
   end
 
   def create
-    #TutorCourse.create(tutor_course_params)
-
-    # @tutor = Tutor.new
-    # @tutor.user_id = current_user.id
-    # @tutor.total_tip = 0;
-    # @tutor.save()
-
     @user_tutor = User.find(current_user.id)
     @user_tutor.update_attributes(is_tutor: true)
 

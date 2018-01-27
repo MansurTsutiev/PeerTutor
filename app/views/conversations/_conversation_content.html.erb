@@ -1,3 +1,9 @@
+<!-- Filter: Days when messages were created and display by Day of creation -->
+<% @cur = "SomeDay" %>
 <% messages.each do |message| %>
+    <% if message.created_at.strftime("%A") != @cur %>
+        <% @cur = message.created_at.strftime("%A") %>
+        <label><%= @cur %></label>
+    <% end %>
   <%= render message, user: user %>
 <% end %>

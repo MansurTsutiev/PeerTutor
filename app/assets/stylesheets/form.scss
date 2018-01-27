@@ -1,29 +1,27 @@
 .simple_form {
   $indent: 120px;
+
   label {
     float: left;
     width: $indent - 20px;
     text-align: right;
     margin: 2px 10px;
+  }
 
-}
-
-
-div.input {
+  div.input {
     margin-bottom: 15px;
-}
+  }
 
-.btn {
+  .btn {
     margin-left: $indent;
   }
 
   .hint {
-     color: #555;
-     font-style: italic;
+    color: #555;
+    font-style: italic;
     position: relative;
     bottom: -15px;
     left: -375px;
     margin-right: $indent;
-
-   }
+  }
 }
