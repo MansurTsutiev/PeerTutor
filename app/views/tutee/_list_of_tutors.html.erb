@@ -14,7 +14,7 @@
       <div class="col col-12" style="text-align: center">
 
         <div class="">
-          <%= link_to "Change My Mind", tutee_find_tutor_path, class: "float-left btn accept_btn", remote: true %>
+          <%= link_to "Change My Mind", tutee_cancel_tutoring_session_path, class: "float-left btn accept_btn", remote: true %>
           <h3 class="text-muted pb-4"><%= @tutoring_session.course.subject.abbrev %> <%= @tutoring_session.course.number %> - <%= @tutoring_session.course.name %> </h3>
         </div>
 
