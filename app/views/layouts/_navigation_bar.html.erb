@@ -12,7 +12,7 @@
 			<ul class="navbar-nav ml-auto pr-3">
 				<% if user_signed_in? %>
 					<li class="nav-item p-2"><a href="#">Signed In As <%= current_user.first_name %></a></li>
-					<li class="nav-item p-2"><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+					<li class="nav-item p-2"><%= link_to "Log out", destroy_user_session_path, method: :delete  %></li>
 				<% else %>
 					<li class="nav-item p-2"><%= link_to "Log in", home_authentication_path %></li>
 				<% end %>
