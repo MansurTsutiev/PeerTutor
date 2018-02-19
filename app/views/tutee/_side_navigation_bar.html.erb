@@ -1,17 +1,19 @@
 <nav class="menu tutee_menu" tabindex="0">
   <!-- <div class="smartphone-menu-trigger"></div> -->
-  <header class="avatar pt-5">
-    <%= link_to tutee_index_path do %>
-    <div class="circle">
-      <% if current_user.avatar.present? %>
-        <%= image_tag current_user.avatar, :id => "avatar"%>
-      <% else %>
-        <h1 id="session_img_init"><%= current_user.first_name[0] %></h1>
+  <div class="avatar_wrapper">
+    <header class="avatar pt-5">
+      <%= link_to tutee_index_path do %>
+      <div class="circle">
+        <% if current_user.avatar.present? %>
+          <%= image_tag current_user.avatar, :id => "avatar"%>
+        <% else %>
+          <h1 id="session_img_init"><%= current_user.first_name[0] %></h1>
+        <% end %>
+      </div>
+      <div class="py-4"><h2 id="dash_board_user_name"><%= current_user.first_name %></h2></div>
       <% end %>
-    </div>
-    <div class="py-4"><h2 id="dash_board_user_name"><%= current_user.first_name %></h2></div>
-    <% end %>
-  </header>
+    </header>
+  </div>
 
   <div class="row justify-content-center">
 

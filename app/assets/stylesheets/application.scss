@@ -100,10 +100,11 @@ nav:focus{
 
 /*==================== NAVIGATION BAR =======================*/
 nav.nav_top {
-  border-bottom: 1.4px dashed rgba(0,0,0,.2);
+  border-bottom: 1.4px solid rgba(0,0,0,.2);
   padding: 0 !important;
   margin: 0;
   width: 100%;
+  background: #FAFAFA;
 }
 nav ul li a {
   color: #777;
@@ -114,11 +115,18 @@ nav ul li a:hover {
 }
 #style_nav_txt {
 	font-weight: bold;
-	font-family: 'Pangolin', sans-serif;
+	font-family: 'Roboto', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif;
 	font-size: 2.4rem;
 	color: #9075BD;
+  font: 600 1.5em/1 'Raleway', sans-serif;
+    color: #9CE3FC;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    position: absolute;
+    font-size: 3em;
+    z-index: 30;
 }
-
 .nav_top .btn {
 	border: 2px solid #ABACD3;
 	padding: 7px 10px;
@@ -131,18 +139,24 @@ nav ul li a:hover {
 	margin: 7px 0;
 	width: 100%;
 }
+
 /*==================== NAVIGATION BAR: END =======================*/
+
+
 
 /*==================== SIDE NAVIGATION BAR: =======================*/
 .menu {
-  background: linear-gradient(#4E4A85,#4E4A85,#80e3fd, white);
+  background: #4995EC;
   height: -webkit-fill-available !important;
   width: 100%;
   z-index: 5;
   box-shadow: 5px 0 5px -5px #777;
 }
+.avatar_wrapper {
+  background: grey;
+}
 .menu .avatar {
-  background: rgba(0, 0, 0, 0.1);
+  background: #4995EC;
   text-align: center;
 }
 .menu .avatar .circle {
@@ -150,7 +164,7 @@ nav ul li a:hover {
   height: 114px;
   border-radius: 50%;
 	display: flex;
-  background-image: linear-gradient(to top left, #4568dc, #b06ab3);
+  background: #6FD7DA;
 	margin: auto;
   box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
 }
@@ -167,9 +181,9 @@ nav ul li a:hover {
 }
 .menu .avatar h2 {
   font-weight: 500;
-	font-family: 'Pangolin', sans-serif;
+	font-family:'Roboto', 'Segoe UI', 'Droid Sans', Tahoma, Arial, sans-serif;
 	font-size: 2.4rem;
-	color: #777;
+	color: white;
 }
 .menu ul {
   list-style: none;
