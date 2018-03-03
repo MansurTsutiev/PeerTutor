@@ -9,5 +9,8 @@ class HomeController < ApplicationController
   end
 
   def authentication
+    if current_user.is_tutor
+      current_user.update_attributes(is_live: false, location: nil)
+    end
   end
 end
