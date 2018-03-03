@@ -12,9 +12,12 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    if current_user.is_tutor
+      current_user.update_attributes(is_live: false, location: nil)
+    end
+    super
+  end
 
   # protected
 
